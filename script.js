@@ -81,6 +81,14 @@ function clickButton(num){
 }
 
 function drawMap(){
+  //画面クリア（body以下子要素全て削除）
+  while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
+  //<div id="map_canvas">生成
+  var mapCanvas = document.createElement("div");
+  mapCanvas.id = "map_canvas";
+  mapCanvas.style.width = "100%";
+  mapCanvas.style.height = "100%";
+  document.body.appendChild(mapCanvas);
   //マップオブジェクト設定
   var mapObj;
   //大阪市役所を緯度・軽度の初期値に設定
