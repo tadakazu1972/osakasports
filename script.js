@@ -87,7 +87,7 @@ function drawMap(){
   var mapCanvas = document.createElement("div");
   mapCanvas.id = "map_canvas";
   mapCanvas.style.width = "100%";
-  mapCanvas.style.height = "100%";
+  mapCanvas.style.height = "400px";
   document.body.appendChild(mapCanvas);
   //マップオブジェクト設定
   var mapObj;
