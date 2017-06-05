@@ -87,7 +87,7 @@ function drawMap(){
   var mapCanvas = document.createElement("div");
   mapCanvas.id = "map_canvas";
   mapCanvas.style.width = "100%";
-  mapCanvas.style.height = "400px";
+  mapCanvas.style.height = "568px";
   document.body.appendChild(mapCanvas);
   //マップオブジェクト設定
   var mapObj;
@@ -97,7 +97,7 @@ function drawMap(){
   //マップ作成
 	var map = document.getElementById("map_canvas");
 	var options = {
-		zoom: 16,
+		zoom: 12,
 		center: new google.maps.LatLng(posX, posY),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
