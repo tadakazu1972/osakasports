@@ -77,4 +77,23 @@ function drawHome(){
 
 function clickButton(num){
   window.confirm(num+"がクリックされたよ");
+  drawMap();
+}
+
+function drawMap(){
+  //マップオブジェクト設定
+  var mapObj;
+  //大阪市役所を緯度・軽度の初期値に設定
+  var posX=34.694062;
+  var posY=135.502154;
+  //マップ作成
+  google.maps.event.addDomListener(window, 'load', function(){
+	  var map = document.getElementById("map_canvas");
+	  var options = {
+		  zoom: 16,
+		  center: new google.maps.LatLng(posX, posY),
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+	  };
+	  mapObj = new google.maps.Map(map, options);
+  });
 }
