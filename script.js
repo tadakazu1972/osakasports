@@ -87,7 +87,7 @@ function drawMap(){
   var posX=34.694062;
   var posY=135.502154;
   //マップ作成
-  google.maps.event.addDomListener(window, 'load', function(){
+  //google.maps.event.addDomListener(window, 'load', function(){
 	  var map = document.getElementById("map_canvas");
 	  var options = {
 		  zoom: 16,
@@ -95,5 +95,5 @@ function drawMap(){
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 	  };
 	  mapObj = new google.maps.Map(map, options);
-  });
+  //});
 }
