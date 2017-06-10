@@ -102,4 +102,32 @@ function drawMap(){
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	mapObj = new google.maps.Map(map, options);
+  //csvファイル読み込み
+  var xhr = new XMLHttpRequest();
+	xhr.onload = function(){
+		var tempArray = xhr.responseText.split("\n");
+		csvArray = new Array();
+		for(var i=0;i<tempArray.length;i++){
+			csvArray[i] = tempArray[i].split(",");
+			var data = csvArray[i];
+			//マーカー作成　画像ファイルを読み込み
+			var image;
+			if (data[0]=="ダミー") {
+			    image = 'png/icon_location.png';
+			} else {
+				image = 'png/icon_location.png';
+			}
+
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng( parseFloat(data[1]), parseFloat(data[2]) ),
+				map: mapObj,
+				icon: image,
+				title: data[0]
+			});
+			//csvファイル　施設名:data[0] 住所:data[3] 電話:data[4] url:data[5]
+			//attachMessage(marker, data[0], data[3], data[4], data[5]);
+		}
+  };
+  xhr.open("get", "facilities.csv", true);
+	xhr.send(null);
 }
