@@ -137,7 +137,7 @@ function drawMap(){
 			});
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
-      //クラス生成
+      //読み込んだデータをfacilityクラスの配列に格納　別ページに遷移してから使います
       facility[i] = new Facility(data[0], data[1], data[2]);
 		}
   };
@@ -157,6 +157,5 @@ function createInfoWindow(getmarker, name, i){
 }
 
 function clickButtonMarker(num){
-  window.confirm(facility[num].name+"ボタンがクリックされた");
-  console.log(facility[num].name);
+  window.confirm(facility[num].name+"がクリックされた");
 }
