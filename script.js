@@ -142,7 +142,7 @@ function clickButtonMarker(num){
 }
 
 function createInfoWindow(getmarker, name, index){
-  var infowindow = new google.maps.InfoWindow({ content:name+"</br>"+"<button onclick='clickButtonMarker()'>イベント情報</button>"});
+  var infowindow = new google.maps.InfoWindow({ content:name+"</br>"+"<button onclick='clickButtonMarker('+ index + ')'>イベント情報</button>"});
   google.maps.event.addListener(getmarker, "mouseover", function(){
     infowindow.open(getmarker.getMap(), getmarker);
   });
