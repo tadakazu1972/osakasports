@@ -172,17 +172,17 @@ function drawFacility(num){
   document.body.appendChild(header);
   //場所について
   var venue = document.createElement("div");
-  venue.class = "bar";
+  venue.className = "bar";
   venue.innerHTML = "場所について"
   document.body.appendChild(venue);
   //施設の詳細情報を見る
   var venueDetail = document.createElement("div");
-  venueDetail.class = "box";
+  venueDetail.className = "box";
   venueDetail.innerHTML = "施設の詳細情報を見る";
   document.body.appendChild(venueDetail);
   //マップで行き方を見る
   var venueRoot = document.createElement("div");
-  venueRool.class = "box";
+  venueRoot.className = "box";
   venueRoot.innerHTML = "マップで行き方を見る";
-  document.body.appendChild(venueRoot); 
+  document.body.appendChild(venueRoot);
 }
