@@ -125,12 +125,16 @@ function drawMap(){
 				title: data[0]
 			});
 			//infowindow生成、マウスオーバーで表示　csvファイル　施設名:data[0]
-			var infowindow = new google.maps.InfoWindow({ content:data[0]+"</br>"});
-      google.maps.event.addListener(marker, "mouseover", function(){
-        infowindow.open(marker.getMap(), marker);
-      });
+			createInfoWindow(marker, data[0]);
 		}
   };
   xhr.open("get", "facilities.csv", true);
 	xhr.send(null);
+}
+
+function createInfoWindow(getmarker, name){
+  var infowindow = new google.maps.InfoWindow({ content:name+"</br>"});
+  google.maps.event.addListener(getmarker, "mouseover", function(){
+    infowindow.open(getmarker.getMap(), getmarker);
+  });
 }
