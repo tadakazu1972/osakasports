@@ -80,6 +80,7 @@ function clickButton(num){
   drawMap();
 }
 
+//施設マップ描画
 function drawMap(){
   //画面クリア（body以下子要素全て削除）
   while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
@@ -107,7 +108,7 @@ function drawMap(){
 	xhr.onload = function(){
 		var tempArray = xhr.responseText.split("\n");
 		var csvArray = new Array();
-    var buttonMarker = new Array(); //次にページ遷移する用のボタン infoWindow内に表示
+    //データの数だけループ
 		for(var i=0;i<tempArray.length;i++){
 			csvArray[i] = tempArray[i].split(",");
 			var data = csvArray[i];
@@ -124,12 +125,7 @@ function drawMap(){
 				icon: image,
 				title: data[0]
 			});
-      //ボタン生成
-      /*buttonMarker[i] = document.createElement("button");
-      buttonMarker[i].type = "button";
-      buttonMarker[i].onclick = (function(num){ return function(){　clickButton(num);　};})(i); //もはや呪文
-      buttonMarker[i].title = "イベント情報"*/
-      //infowindow生成、マウスオーバーで表示　csvファイル　施設名:data[0]
+      //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
 		}
   };
@@ -137,18 +133,17 @@ function drawMap(){
 	xhr.send(null);
 }
 
-function clickButtonMarker(num){
-  window.confirm(num+"がクリックされたよ");
-}
-
 function createInfoWindow(getmarker, name, i){
   var buttonMarker = document.createElement("button");
   buttonMarker.type = "button";
   buttonMarker.onclick = (function(num){ return function(){　clickButton(num);　};})(i); //もはや呪文
   buttonMarker.innerHTML = name + "</br>" + "イベント情報";
-
   var infowindow = new google.maps.InfoWindow({ content: buttonMarker });
   google.maps.event.addListener(getmarker, "mouseover", function(){
     infowindow.open(getmarker.getMap(), getmarker);
   });
+}
+
+function clickButtonMarker(num){
+  window.confirm(num+"がクリックされたよ");
 }
