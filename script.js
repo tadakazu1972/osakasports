@@ -157,5 +157,6 @@ function createInfoWindow(getmarker, name, i){
 }
 
 function clickButtonMarker(num){
-  window.confirm(facility[num].name+"がクリックされたよ");
+  window.confirm(num+"ボタンがクリックされた");
+  console.log(facility[num].name);
 }
