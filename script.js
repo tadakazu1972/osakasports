@@ -165,8 +165,24 @@ function clickButtonMarker(num){
 function drawFacility(num){
   //画面クリア（body以下子要素全て削除）
   while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
+  //ヘッダーを施設名で描画
   var header = document.createElement("div");
   header.id = "header";
   header.innerHTML = facility[num].name;
   document.body.appendChild(header);
+  //場所について
+  var venue = document.createElement("div");
+  venue.class = "bar";
+  venue.innerHTML = "場所について"
+  document.body.appendChild(venue);
+  //施設の詳細情報を見る
+  var venueDetail = document.createElement("div");
+  venueDetail.class = "box";
+  venueDetail.innerHTML = "施設の詳細情報を見る";
+  document.body.appendChild(venueDetail);
+  //マップで行き方を見る
+  var venueRoot = document.createElement("div");
+  venueRool.class = "box";
+  venueRoot.innerHTML = "マップで行き方を見る";
+  document.body.appendChild(venueRoot); 
 }
