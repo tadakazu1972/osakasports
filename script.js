@@ -90,7 +90,7 @@ function clickButton(num){
   drawMap();
 }
 
-//施設マップ描画
+//マップ描画
 function drawMap(){
   //画面クリア（body以下子要素全て削除）
   while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
@@ -158,4 +158,15 @@ function createInfoWindow(getmarker, name, i){
 
 function clickButtonMarker(num){
   window.confirm(facility[num].name+"がクリックされた");
+  drawFacility(num);
+}
+
+//施設描画
+function drawFacility(num){
+  //画面クリア（body以下子要素全て削除）
+  while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
+  var header = document.createElement("div");
+  header.id = "header";
+  header.innerHTML = facility[num].name;
+  document.body.appendChild(header);
 }
