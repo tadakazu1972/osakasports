@@ -146,6 +146,8 @@ function createInfoWindow(getmarker, name, i){
   buttonMarker.type = "button";
   buttonMarker.onclick = (function(num){ return function(){　clickButton(num);　};})(i); //もはや呪文
   buttonMarker.title = "イベント情報";
+  buttonMarker.style.width = "72px";
+  buttonMarker.style.height = "12px";
 
   var infowindow = new google.maps.InfoWindow({ content: buttonMarker });
   google.maps.event.addListener(getmarker, "mouseover", function(){
