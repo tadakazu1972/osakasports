@@ -1,3 +1,13 @@
+//グローバル
+var facility = new Array(); //施設
+
+//施設クラス
+function Facility(_name, _lat, _lng ){
+  this.name = _name;
+  this.lat  = _lat;
+  this.lng  = _lng;
+}
+
 //初期化
 function init(){
   var mView = new View();
@@ -127,6 +137,8 @@ function drawMap(){
 			});
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
+      //クラス生成
+      facility[i] = new Facility(data[0], data[1], data[2]);
 		}
   };
   xhr.open("get", "facilities.csv", true);
@@ -145,5 +157,5 @@ function createInfoWindow(getmarker, name, i){
 }
 
 function clickButtonMarker(num){
-  window.confirm(num+"がクリックされたよ");
+  window.confirm(facility[num].name+"がクリックされたよ");
 }
