@@ -124,8 +124,9 @@ function drawMap(){
 				icon: image,
 				title: data[0]
 			});
-			//csvファイル　施設名:data[0] 住所:data[3] 電話:data[4] url:data[5]
-			//attachMessage(marker, data[0], data[3], data[4], data[5]);
+			//infowindow生成し常に表示　csvファイル　施設名:data[0]
+			var infowindow = new google.maps.InfoWindow({ content:data[0]+"</br>"})
+      infowindow.open(marker.getMap(), marker);
 		}
   };
   xhr.open("get", "facilities.csv", true);
