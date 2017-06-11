@@ -185,4 +185,9 @@ function drawFacility(num){
   venueRoot.className = "box";
   venueRoot.innerHTML = "マップで行き方を見る";
   document.body.appendChild(venueRoot);
+  //イベント一覧
+  var events = document.createElement("div");
+  events.className = "bar";
+  events.innerHTML = "場所について"
+  document.body.appendChild(events);
 }
