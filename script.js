@@ -124,9 +124,11 @@ function drawMap(){
 				icon: image,
 				title: data[0]
 			});
-			//infowindow生成し常に表示　csvファイル　施設名:data[0]
+			//infowindow生成、マウスオーバーで表示　csvファイル　施設名:data[0]
 			var infowindow = new google.maps.InfoWindow({ content:data[0]+"</br>"})
-      infowindow.open(marker.getMap(), marker);
+      google.maps.event.addListener(marker, "mouseover", function(){
+        infowindow.open(marker.getMap(), marker);
+      });
 		}
   };
   xhr.open("get", "facilities.csv", true);
