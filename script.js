@@ -188,6 +188,6 @@ function drawFacility(num){
   //イベント一覧
   var events = document.createElement("div");
   events.className = "bar";
-  events.innerHTML = "場所について"
+  events.innerHTML = "イベント一覧"
   document.body.appendChild(events);
 }
