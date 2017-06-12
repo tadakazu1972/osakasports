@@ -177,7 +177,7 @@ function drawFacility(){
   var lat  = decodeURIComponent(key["lat"]);
   var lng  = decodeURIComponent(key["lng"]);
   var header = document.getElementById("header");
-  header.innerHTML = name+" "+lat+" "+lng;
+  header.innerHTML = name;
   //場所について
   /*var venue = document.createElement("div");
   venue.className = "bar";
@@ -198,4 +198,8 @@ function drawFacility(){
   events.className = "bar";
   events.innerHTML = "イベント一覧"
   document.body.appendChild(events);*/
+  var latlng = document.createElement("div");
+  latlng.className = "box";
+  latlng.innerHTML = "lat="+lat+" lng="+lng;
+  document.body.appendChild(latlng);
 }
