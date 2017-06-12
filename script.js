@@ -174,7 +174,8 @@ function createInfoWindow(getmarker, name, i){
 function clickButtonMarker(num){
   window.confirm(facility[num].name+"がクリックされた");
   //drawFacility(num);
-  var name = escape(facility[num].name);
+  //var name = escape(facility[num].name);
+  var name = encodeURIComponent(facility[num].name);
   var param = "name="+name;
   location.href="./index3.html?"+param;
 }
@@ -191,7 +192,8 @@ function drawFacility(){
   var param = location.search;
   param = param.substring(1);
   var pair = param.split("=");
-  var name = unescape(pair[1]);
+  //var name = unescape(pair[1]);
+  var name = decodeURIComponent(pair[1]);
   var header = document.getElementById("header");
   header.innerHTML = name;
   //場所について
