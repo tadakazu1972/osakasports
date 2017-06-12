@@ -90,31 +90,8 @@ function clickButton(num){
   location.href="./index2.html";
 }
 
-function loadHTML(_html,replace){
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET",_html,true);
-  xmlhttp.onreadystatechange = function(){
-  //とれた場合Idにそって入れ替え
-  if(xmlhttp.readyState == 4 && xmlhttp.status==200){
-           var data = xmlhttp.responseText;
-           var elem = document.getElementById(replace);
-           elem.innerHTML= data;
-      return data;
-    }
-  }
-  xmlhttp.send(null);
-}
-
 //マップ描画
 function drawMap(){
-  //画面クリア（body以下子要素全て削除）
-  /*while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
-  //<div id="map_canvas">生成
-  var mapCanvas = document.createElement("div");
-  mapCanvas.id = "map_canvas";
-  mapCanvas.style.width = "100%";
-  mapCanvas.style.height = "568px";
-  document.body.appendChild(mapCanvas);*/
   //マップオブジェクト設定
   var mapObj;
   //大阪市役所を緯度・軽度の初期値に設定
@@ -152,7 +129,7 @@ function drawMap(){
 			});
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
-      //読み込んだデータをfacilityクラスの配列に格納　別ページに遷移してから使います
+      //読み込んだデータをfacilityクラスの配列に格納　ページ遷移時にパラメータ渡しで使います
       facility[i] = new Facility(data[0], data[1], data[2]);
 		}
   };
@@ -173,29 +150,34 @@ function createInfoWindow(getmarker, name, i){
 
 function clickButtonMarker(num){
   window.confirm(facility[num].name+"がクリックされた");
-  //drawFacility(num);
-  //var name = escape(facility[num].name);
+  //var name = escape(facility[num].name);　非推奨
   var name = encodeURIComponent(facility[num].name);
-  var param = "name="+name;
+  var lat  = encodeURIComponent(facility[num].lat);
+  var lng  = encodeURIComponent(facility[num].lng);
+  var param = "name="+name+"&lat="+lat+"&lng="+lng;
   location.href="./index3.html?"+param;
 }
 
 //施設描画
 function drawFacility(){
-  //画面クリア（body以下子要素全て削除）
-  /*while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
-  //ヘッダーを施設名で描画
-  var header = document.createElement("div");
-  header.id = "header";
-  header.innerHTML = facility[num].name;
-  document.body.appendChild(header);*/
-  var param = location.search;
-  param = param.substring(1);
-  var pair = param.split("=");
-  //var name = unescape(pair[1]);
-  var name = decodeURIComponent(pair[1]);
+  var param = location.search; // アドレスの「?」以降の引数(パラメータ)を取得
+  param = param.substring(1); //先頭の?をカット
+  var pair = param.split("&"); //&で引数を分割
+  var temp = "";
+  var key = new Array();
+  for (var i=0;i<pair.length;i++){
+    temp = pair[i].split("="); //配列を=で分割
+    keyName = temp[0];
+    keyValue = temp[1];
+    //キーと値の連想配列を生成
+    key[keyName] = keyValue;
+  }
+  //var name = unescape(pair[1]);　非推奨
+  var name = decodeURIComponent(key["name"]);
+  var lat  = decodeURIComponent(key["lat"]);
+  var lng  = decodeURIComponent(key["lng"]);
   var header = document.getElementById("header");
-  header.innerHTML = name;
+  header.innerHTML = name+lat+lng;
   //場所について
   var venue = document.createElement("div");
   venue.className = "bar";
