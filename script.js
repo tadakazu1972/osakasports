@@ -186,6 +186,8 @@ function drawFacility(num){
   header.id = "header";
   header.innerHTML = facility[num].name;
   document.body.appendChild(header);*/
+  var header = document.getElementById("header");
+  header.innerHTML = facility[num].name;
   //場所について
   var venue = document.createElement("div");
   venue.className = "bar";
