@@ -176,14 +176,11 @@ function clickButtonMarker(num){
   //drawFacility(num);
   var name = escape(facility[num].name);
   var param = "name="+name;
-  location.href="./index3.html";
-  window.onload = function(){
-    drawFacility(num);
-  };
+  location.href="./index3.html"+param;
 }
 
 //施設描画
-function drawFacility(num){
+function drawFacility(){
   //画面クリア（body以下子要素全て削除）
   /*while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
   //ヘッダーを施設名で描画
@@ -191,12 +188,12 @@ function drawFacility(num){
   header.id = "header";
   header.innerHTML = facility[num].name;
   document.body.appendChild(header);*/
-  /*var param = location.search;
+  var param = location.search;
   param = param.substring(1);
   var pair = param.split("=");
-  var name = pair[1];*/
+  var name = pair[1];
   var header = document.getElementById("header");
-  header.innerHTML = facility[num].name;
+  header.innerHTML = name;
   //場所について
   var venue = document.createElement("div");
   venue.className = "bar";
