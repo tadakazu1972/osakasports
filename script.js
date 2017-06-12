@@ -87,19 +87,34 @@ function drawHome(){
 
 function clickButton(num){
   window.confirm(num+"がクリックされたよ");
-  drawMap();
+  location.href="./index2.html";
+}
+
+function loadHTML(_html,replace){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET",_html,true);
+  xmlhttp.onreadystatechange = function(){
+  //とれた場合Idにそって入れ替え
+  if(xmlhttp.readyState == 4 && xmlhttp.status==200){
+           var data = xmlhttp.responseText;
+           var elem = document.getElementById(replace);
+           elem.innerHTML= data;
+      return data;
+    }
+  }
+  xmlhttp.send(null);
 }
 
 //マップ描画
 function drawMap(){
   //画面クリア（body以下子要素全て削除）
-  while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
+  /*while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
   //<div id="map_canvas">生成
   var mapCanvas = document.createElement("div");
   mapCanvas.id = "map_canvas";
   mapCanvas.style.width = "100%";
   mapCanvas.style.height = "568px";
-  document.body.appendChild(mapCanvas);
+  document.body.appendChild(mapCanvas);*/
   //マップオブジェクト設定
   var mapObj;
   //大阪市役所を緯度・軽度の初期値に設定
@@ -158,18 +173,19 @@ function createInfoWindow(getmarker, name, i){
 
 function clickButtonMarker(num){
   window.confirm(facility[num].name+"がクリックされた");
-  drawFacility(num);
+  //drawFacility(num);
+  location.href="./index3.html";
 }
 
 //施設描画
 function drawFacility(num){
   //画面クリア（body以下子要素全て削除）
-  while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
+  /*while (document.body.firstChild) document.body.removeChild(document.body.firstChild);
   //ヘッダーを施設名で描画
   var header = document.createElement("div");
   header.id = "header";
   header.innerHTML = facility[num].name;
-  document.body.appendChild(header);
+  document.body.appendChild(header);*/
   //場所について
   var venue = document.createElement("div");
   venue.className = "bar";
