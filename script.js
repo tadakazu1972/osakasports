@@ -174,7 +174,12 @@ function createInfoWindow(getmarker, name, i){
 function clickButtonMarker(num){
   window.confirm(facility[num].name+"がクリックされた");
   //drawFacility(num);
+  var name = escape(facility[num].name);
+  var param = "name="+name;
   location.href="./index3.html";
+  window.onload = function(){
+    drawFacility(num);
+  };
 }
 
 //施設描画
@@ -186,6 +191,10 @@ function drawFacility(num){
   header.id = "header";
   header.innerHTML = facility[num].name;
   document.body.appendChild(header);*/
+  /*var param = location.search;
+  param = param.substring(1);
+  var pair = param.split("=");
+  var name = pair[1];*/
   var header = document.getElementById("header");
   header.innerHTML = facility[num].name;
   //場所について
