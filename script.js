@@ -1,11 +1,33 @@
 //グローバル
 var facility = new Array(); //施設
+var eventData = new Array(); //イベントデータ全て格納
 
 //施設クラス
 function Facility(_name, _lat, _lng ){
   this.name = _name;
   this.lat  = _lat;
   this.lng  = _lng;
+}
+
+//イベントデータクラス
+function EventData(_id, _file, _facility, _place, _name, _category, _top, _date, _time, _submit, _fee, _target, _station, _address, _tel, _question, _etc){
+  this.id = _id;
+  this.file = _file;
+  this.facility = _facility;
+  this.place = _place;
+  this.name = _name;
+  this.category = _category;
+  this.top = _top;
+  this.date = _date;
+  this.time = _time;
+  this.submit = _submit;
+  this.fee = _fee;
+  this.target = _target;
+  this.station = _station;
+  this.address = _address;
+  this.tel = _tel;
+  this.question = _question;
+  this.etc = _etc;
 }
 
 //初期化
@@ -155,7 +177,7 @@ function clickButtonMarker(num){
   var lat  = encodeURIComponent(facility[num].lat);
   var lng  = encodeURIComponent(facility[num].lng);
   var param = "name="+name+"&lat="+lat+"&lng="+lng;
-  location.href="./index3.html?"+param;
+  location.href = "./index3.html?"+param;
 }
 
 //施設描画
@@ -188,11 +210,13 @@ function drawFacility(){
     for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
       csvArray[i] = tempArray[i].split(",");
       var data = csvArray[i];
+      //とりあえず読み込んだすべてのデータをDataクラスの配列に格納
+      eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
       //該当施設のデータを表示
       if (data[2] == name){
         var item = document.createElement("li");
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = (function(data){ return function(){ clickList(data); };})(i);
+        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         container.appendChild(item);
       };
     };
@@ -201,6 +225,22 @@ function drawFacility(){
   xhr.send(null);
 }
 
-function clickList(data){
-  window.confirm(data);
+function clickList(num){
+  window.confirm("id:"+num+"がクリックされた");
+  var _id = encodeURIComponent(eventData[num].id);
+  var param = "id="+_id;
+  location.href = "./index4.html?"+param;
+}
+
+//イベント詳細描画
+function drawEvent(){
+  //イベントidのパラメーターの受け取り
+  var param = location.search; // アドレスの「?」以降の引数(パラメータ)を取得
+  param = param.substring(1); //先頭の?をカット
+  var pair = "";
+  var temp = "";
+  temp = pair.split("="); //id=_idを=で分割
+  var id = decodeURIComponent(temp[1]);
+  var header = document.getElementById("header");
+  header.innerHTML = eventData[id].name;
 }

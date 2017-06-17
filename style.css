@@ -30,3 +30,25 @@ body {
 	font-weight: bold;
 	padding: 10px;
 }
+
+#tel{
+	height: 80px;
+	display: flex;
+	align-items: center;
+	background: #22b;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	padding: 20px;
+}
+
+#mail{
+	height: 80px;
+	display: flex;
+	align-items: center;
+	background: #22b;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	padding: 20px;
+}
