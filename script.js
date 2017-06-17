@@ -192,10 +192,15 @@ function drawFacility(){
       if (data[2] == name){
         var item = document.createElement("li");
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        item.onclick = function(){ clickList(data); };
         container.appendChild(item);
       };
     };
   };
   xhr.open("get", "data.csv", true);
   xhr.send(null);
+}
+
+function clickList(data){
+  window.confirm(data);
 }
