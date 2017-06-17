@@ -241,6 +241,27 @@ function drawEvent(){
   var temp = "";
   temp = pair.split("="); //id=_idを=で分割
   var id = decodeURIComponent(temp[1]);
-  var header = document.getElementById("header");
-  header.innerHTML = eventData[id].name;
+  //イベント一覧のcsvファイル読み込み
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    var tempArray = xhr.responseText.split("\n");
+    var csvArray = new Array();
+    for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
+      csvArray[i] = tempArray[i].split(",");
+      var data = csvArray[i];
+      //とりあえず読み込んだすべてのデータをDataクラスの配列に格納
+      eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
+      //該当idのデータを表示
+      if (data[0] == id){
+        var header = document.getElementById("header");
+        header.innerHTML = eventData[id].name;
+        var date = document.getElementById("date");
+        date.innerHTML = eventData[id].date + "  " + eventData[id].time;
+        var facility = document.getElementById("facility");
+        facility.innetHTML = eventData[i].facility;
+      };
+    };
+  };
+  xhr.open("get", "data.csv", true);
+  xhr.send(null);
 }
