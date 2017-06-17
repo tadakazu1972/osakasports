@@ -254,10 +254,10 @@ function drawEvent(){
       if (data[0] == id){
         var header = document.getElementById("header");
         header.innerHTML = eventData[id].name;
-        var date = document.getElementById("date");
+        var date = "日時：" + document.getElementById("date");
         date.innerHTML = eventData[id].date + "  " + eventData[id].time;
         var facility = document.getElementById("facility");
-        facility.innetHTML = eventData[i].facility;
+        facility.innerHTML = "場所：" + eventData[i].facility;
       };
     };
   };
