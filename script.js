@@ -160,6 +160,7 @@ function clickButtonMarker(num){
 
 //施設描画
 function drawFacility(){
+  //施設名、緯度経度のパラメーターの受け取り
   var param = location.search; // アドレスの「?」以降の引数(パラメータ)を取得
   param = param.substring(1); //先頭の?をカット
   var pair = param.split("&"); //&で引数を分割
@@ -172,34 +173,26 @@ function drawFacility(){
     //キーと値の連想配列を生成
     key[keyName] = keyValue;
   }
-  //var name = unescape(pair[1]);　非推奨
   var name = decodeURIComponent(key["name"]);
   var lat  = decodeURIComponent(key["lat"]);
   var lng  = decodeURIComponent(key["lng"]);
   var header = document.getElementById("header");
   header.innerHTML = name;
-  //場所について
-  /*var venue = document.createElement("div");
-  venue.className = "bar";
-  venue.innerHTML = "場所について"
-  document.body.appendChild(venue);
-  //施設の詳細情報を見る
-  var venueDetail = document.createElement("div");
-  venueDetail.className = "box";
-  venueDetail.innerHTML = "施設の詳細情報を見る";
-  document.body.appendChild(venueDetail);
-  //マップで行き方を見る
-  var venueRoot = document.createElement("div");
-  venueRoot.className = "box";
-  venueRoot.innerHTML = "マップで行き方を見る";
-  document.body.appendChild(venueRoot);
-  //イベント一覧
-  var events = document.createElement("div");
-  events.className = "bar";
-  events.innerHTML = "イベント一覧"
-  document.body.appendChild(events);*/
-  var latlng = document.createElement("div");
-  latlng.className = "box";
-  latlng.innerHTML = "lat="+lat+" lng="+lng;
-  document.body.appendChild(latlng);
+  //緯度経度をマップで行き方を見るに渡す
+  //イベント一覧のcsvファイル読み込み
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    var container = document.getElementById("list"); //リスト描画タグ確保
+    var tempArray = xhr.responseText.split("\n");
+    var csvArray = new Array();
+    for(var i=0;i<tempArray.length;i++){
+      csvArray[i] = tempArray[i].split(",");
+      var data = csvArray[i];
+      var item = document.createElement("li");
+      item.textContent = data[0]+data[1]+data[2];
+      container.appendChild(item);
+    }
+  };
+  xhr.open("get", "data.csv", true);
+  xhr.send(null);
 }
