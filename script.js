@@ -192,7 +192,7 @@ function drawFacility(){
       if (data[2] == name){
         var item = document.createElement("li");
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = function(){ clickList(data); };
+        item.onclick = (function(data){ return function(){ clickList(data); };})(i);
         container.appendChild(item);
       };
     };
