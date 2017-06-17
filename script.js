@@ -254,8 +254,8 @@ function drawEvent(){
       if (data[0] == id){
         var header = document.getElementById("header");
         header.innerHTML = eventData[id].name;
-        var date = "日時：" + document.getElementById("date");
-        date.innerHTML = eventData[id].date + "  " + eventData[id].time;
+        var date = document.getElementById("date");
+        date.innerHTML = "日時：" + eventData[id].date + "  " + eventData[id].time;
         var facility = document.getElementById("facility");
         facility.innerHTML = "場所：" + eventData[i].facility;
       };
