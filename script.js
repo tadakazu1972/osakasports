@@ -188,10 +188,13 @@ function drawFacility(){
     for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
       csvArray[i] = tempArray[i].split(",");
       var data = csvArray[i];
-      var item = document.createElement("li");
-      item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-      container.appendChild(item);
-    }
+      //該当施設のデータを表示
+      if (data[2] == name){
+        var item = document.createElement("li");
+        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        container.appendChild(item);
+      };
+    };
   };
   xhr.open("get", "data.csv", true);
   xhr.send(null);
