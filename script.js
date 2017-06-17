@@ -240,7 +240,8 @@ function drawEvent(){
   var pair = "";
   var temp = "";
   temp = pair.split("="); //id=_idを=で分割
-  var id = decodeURIComponent(temp[1]);
+  //var id = decodeURIComponent(temp[1]);
+  var id = 1;
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
