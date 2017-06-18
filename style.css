@@ -31,6 +31,10 @@ body {
 	padding: 10px;
 }
 
+.list:hover {
+	background: #ccc;
+}
+
 #tel{
 	margin:20px;
 	height: 80px;

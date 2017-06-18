@@ -215,12 +215,12 @@ function drawFacility(){
       //該当施設のデータを表示
       if (data[2] == name){
         var item = document.createElement("div");
+        item.className = "list";
         item.style.border = "solid";
         item.style.margin = "4px";
         item.style.padding = "4px";
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        item.onmouseover = (function(num){ return function(){ item.style.background = "#aaa"; };})(i);
         document.body.appendChild(item);
       };
     };
