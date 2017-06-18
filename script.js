@@ -214,7 +214,10 @@ function drawFacility(){
       eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
       //該当施設のデータを表示
       if (data[2] == name){
-        var item = document.createElement("li");
+        var item = document.createElement("div");
+        item.style.boder = "outset; 2px;";
+        item.style.margin = "4px";
+        item.style.padding = "4px";
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         container.appendChild(item);
