@@ -215,7 +215,7 @@ function drawFacility(){
       //該当施設のデータを表示
       if (data[2] == name){
         var item = document.createElement("div");
-        item.style.border-bottom-style = "solid";
+        item.style.border = "solid";
         item.style.margin = "4px";
         item.style.padding = "4px";
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
