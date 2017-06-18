@@ -204,7 +204,7 @@ function drawFacility(){
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
-    var container = document.getElementById("list"); //リスト描画タグ確保
+    //var container = document.getElementById("list"); //リスト描画タグ確保
     var tempArray = xhr.responseText.split("\n");
     var csvArray = new Array();
     for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
@@ -220,7 +220,7 @@ function drawFacility(){
         item.style.padding = "4px";
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        container.appendChild(item);
+        document.body.appendChild(item);
       };
     };
   };
