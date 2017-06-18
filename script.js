@@ -171,7 +171,7 @@ function createInfoWindow(getmarker, name, i){
 }
 
 function clickButtonMarker(num){
-  window.confirm(facility[num].name+"がクリックされた");
+  //window.confirm(facility[num].name+"がクリックされた");
   //var name = escape(facility[num].name);　非推奨
   var name = encodeURIComponent(facility[num].name);
   var lat  = encodeURIComponent(facility[num].lat);
@@ -230,7 +230,7 @@ function drawFacility(){
 }
 
 function clickList(num){
-  window.confirm("id:"+num+"がクリックされた");
+  //window.confirm("id:"+num+"がクリックされた");
   var _id = encodeURIComponent(eventData[num].id);
   var param = "id="+_id;
   location.href = "./index4.html?"+param;
@@ -262,6 +262,19 @@ function drawEvent(){
         date.innerHTML = "日時：" + eventData[id].date + "  " + eventData[id].time;
         var facility = document.getElementById("facility");
         facility.innerHTML = "場所：" + eventData[i].facility;
+        //Googleカレンダー登録準備
+        var text = eventData[id].name;
+        //var datefrom = '2014-06-10T17:00:00';
+        //var dateto = '2014-06-10T18:00:00';
+        var website = 'https://osakasports.azurewebsites.net/';
+        var zero = function(n) { return ('0' + n).slice(-2); };
+        var formatdate = function(datestr) {
+          var date = new Date(datestr + '+09:00');
+          return date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate()) + 'T' + zero(date.getUTCHours()) + zero(date.getUTCMinutes()) + zero(date.getUTCSeconds()) + 'Z';
+        };
+        //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
+        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&location=' + website;
+        document.getElementById("calender").setAttribute('href', url);
       };
     };
   };
