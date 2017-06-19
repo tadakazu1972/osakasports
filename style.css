@@ -60,26 +60,26 @@ img {
 
 #tel {
 	margin:20px;
-	height: 80px;
+	height: 40px;
 	text-align: center;
-	line-height: 80px;
+	line-height: 40px;
 	background: #22b;
 	color: #fff;
-	font-size: 40px;
+	font-size: 20px;
 	font-weight: bold;
-	padding: 20px;
+	padding: 10px;
 }
 
 #mail {
 	margin:20px;
-	height: 80px;
+	height: 40px;
 	text-align: center;
-	line-height: 80px;
+	line-height: 40px;
 	background: #22b;
 	color: #fff;
-	font-size: 40px;
+	font-size: 20px;
 	font-weight: bold;
-	padding: 20px;
+	padding: 10px;
 }
 
 #calenderParent {
