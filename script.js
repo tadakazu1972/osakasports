@@ -281,3 +281,7 @@ function drawEvent(){
   xhr.open("get", "data.csv", true);
   xhr.send(null);
 }
+
+function drawSearch(){
+  
+}
