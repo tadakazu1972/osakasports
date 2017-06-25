@@ -64,7 +64,7 @@ function drawResult(){
       csvArray[i] = tempArray[i].split(",");
       var data = csvArray[i];
       //とりあえず読み込んだすべてのデータをDataクラスの配列に格納
-      eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
+      eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16]);
       //日付処理:引き継いだパラメータから検索開始日と検索終了日をDate型でつくり、csvから開催日をDate型をつくり、比較させる
       var date1 = new Date(2017, fromMonth-1, fromDate); //月は-1を忘れずに!!
       var date2 = new Date(2017, toMonth-1, toDate);
