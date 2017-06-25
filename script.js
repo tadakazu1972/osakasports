@@ -105,11 +105,28 @@ function drawHome(){
     label[i].style.top  = buttonY[i] + 16 + "%";
   　document.body.appendChild(label[i]);
   }
+  //詳細検索ボタン
+  var btnSearch = document.createElement("button");
+  btnSearch.type = "button";
+  btnSearch.onclick = function(){ clickGotoSearch(); };
+  btnSearch.innerHTML = "　詳細検索　";
+  btnSearch.style.fontSize = 14 * ratio + "px";
+  btnSearch.style.fontWeight = "bold";
+  btnSearch.style.background = "#22e";
+  btnSearch.style.color = "#fff";
+  btnSearch.style.position = "absolute";
+  btnSearch.style.left = "40%";
+  btnSearch.style.top  = "85%";
+  document.body.appendChild(btnSearch);
 }
 
 function clickButton(num){
   window.confirm(num+"がクリックされたよ");
   location.href="./index2.html";
+}
+
+function clickGotoSearch(){
+  location.href="./search.html";
 }
 
 //マップ描画

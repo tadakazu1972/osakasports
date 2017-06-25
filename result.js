@@ -46,9 +46,9 @@ function drawResult(){
     key[keyName] = keyValue;
   }
   var fromMonth = decodeURIComponent(key["fromMonth"]);
-  var fromDay   = decodeURIComponent(key["fromDay"]);
+  var fromDate  = decodeURIComponent(key["fromDate"]);
   var toMonth   = decodeURIComponent(key["toMonth"]);
-  var toDay     = decodeURIComponent(key["toDay"]);
+  var toDate    = decodeURIComponent(key["toDate"]);
   var facility  = decodeURIComponent(key["facility"]);
   var category  = decodeURIComponent(key["category"]);
   var word      = decodeURIComponent(key["freeword"]);
@@ -65,8 +65,105 @@ function drawResult(){
       var data = csvArray[i];
       //とりあえず読み込んだすべてのデータをDataクラスの配列に格納
       eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
-      //該当施設のデータを表示
-      if (data[2] == facility){
+      //日付処理:引き継いだパラメータから検索開始日と検索終了日をDate型でつくり、csvから開催日をDate型をつくり、比較させる
+      var date1 = new Date(2017, fromMonth-1, fromDate); //月は-1を忘れずに!!
+      var date2 = new Date(2017, toMonth-1, toDate);
+      var tempDateStr = data[7].substr(0,5); //開催日の文字列『１０月１０日（祝）」から「１０月１０」だけ切り出し
+      var tempDatePair = tempDateStr.split("月"); //月の文字で分割して配列にする
+      var date3 = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
+      //３つのDateを比較し、はさまれた開催日のみ表示
+      if (date1 <= date3){
+        if (date3 <= date2){
+          if (facility == "すべて"){
+            if (category == "すべて"){
+              if (word == ""){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              } else if (tempArray[i].match(word)){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              };
+            } else if (category == data[5]){
+              if (word == ""){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              } else if (tempArray[i].match(word)){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              };
+            };
+          } else if (facility == data[2]){
+            if (category == "すべて"){
+              if (word == ""){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              } else if (tempArray[i].match(word)){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              };
+            } else if (category == data[5]){
+              if (word == ""){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              } else if (tempArray[i].match(word)){
+                var item = document.createElement("div");
+                item.className = "list";
+                item.style.border = "solid";
+                item.style.margin = "4px";
+                item.style.padding = "4px";
+                item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+                item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+                document.body.appendChild(item);
+              };
+            };
+          };
+        };
+      };
+
+      /*//該当施設のデータを表示
+      if (facility == "すべて" || facility == data[2]){
         var item = document.createElement("div");
         item.className = "list";
         item.style.border = "solid";
@@ -75,7 +172,40 @@ function drawResult(){
         item.textContent = data[7]+"  "+data[4]+"  "+data[2];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         document.body.appendChild(item);
-      };
+      };*/
+      /*//該当競技のデータを表示
+      if (category == "すべて" || category == data[5]){
+        var item = document.createElement("div");
+        item.className = "list";
+        item.style.border = "solid";
+        item.style.margin = "4px";
+        item.style.padding = "4px";
+        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+        document.body.appendChild(item);
+      };*/
+      /*//施設と競技
+      if (facility == data[2] && category == data[5]){
+        var item = document.createElement("div");
+        item.className = "list";
+        item.style.border = "solid";
+        item.style.margin = "4px";
+        item.style.padding = "4px";
+        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+        document.body.appendChild(item);
+      };*/
+      /*//フリーワードを含むか
+      if (tempArray[i].match(word)){
+        var item = document.createElement("div");
+        item.className = "list";
+        item.style.border = "solid";
+        item.style.margin = "4px";
+        item.style.padding = "4px";
+        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
+        document.body.appendChild(item);
+      }*/
     };
   };
   xhr.open("get", "data.csv", true);
@@ -87,50 +217,4 @@ function clickList(num){
   var _id = encodeURIComponent(eventData[num].id);
   var param = "id="+_id;
   location.href = "./index4.html?"+param;
-}
-
-//イベント詳細描画
-function drawEvent(){
-  //イベントidのパラメーターの受け取り
-  var param = location.search; // アドレスの「?」以降の引数(パラメータ)を取得
-  param = param.substring(1); //先頭の?をカット
-  var temp = "";
-  temp = param.split("="); //id=_idを=で分割
-  var id = decodeURIComponent(temp[1]);
-  //イベント一覧のcsvファイル読み込み
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-    var tempArray = xhr.responseText.split("\n");
-    var csvArray = new Array();
-    for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
-      csvArray[i] = tempArray[i].split(",");
-      var data = csvArray[i];
-      //とりあえず読み込んだすべてのデータをDataクラスの配列に格納
-      eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[12],data[13],data[14],data[15]);
-      //該当idのデータを表示
-      if (data[0] == id){
-        var header = document.getElementById("header");
-        header.innerHTML = eventData[id].name;
-        var date = document.getElementById("date");
-        date.innerHTML = "日時：" + eventData[id].date + "  " + eventData[id].time;
-        var facility = document.getElementById("facility");
-        facility.innerHTML = "場所：" + eventData[i].facility;
-        //Googleカレンダー登録準備
-        var text = eventData[id].name;
-        //var datefrom = '2014-06-10T17:00:00';
-        //var dateto = '2014-06-10T18:00:00';
-        var website = 'https://osakasports.azurewebsites.net/';
-        var zero = function(n) { return ('0' + n).slice(-2); };
-        var formatdate = function(datestr) {
-          var date = new Date(datestr + '+09:00');
-          return date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate()) + 'T' + zero(date.getUTCHours()) + zero(date.getUTCMinutes()) + zero(date.getUTCSeconds()) + 'Z';
-        };
-        //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
-        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&location=' + website;
-        document.getElementById("calender").setAttribute('href', url);
-      };
-    };
-  };
-  xhr.open("get", "data.csv", true);
-  xhr.send(null);
 }
