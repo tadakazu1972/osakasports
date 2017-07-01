@@ -58,7 +58,7 @@ function drawMap(){
       facility[i] = new Facility(data[0], data[1], data[2]);
 		}
   };
-  xhr.open("get", "facilities2.csv", true);
+  xhr.open("get", "facilities.csv", true);
 	xhr.send(null);
 }
 
