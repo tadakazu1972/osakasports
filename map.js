@@ -40,7 +40,8 @@ function drawMap(){
 			var data = csvArray[i];
 			//マーカー作成　画像ファイルを読み込み
 			var image;
-			if (data[3+num]=="1") {
+      var j = 3 + num;
+			if (data[j]==1) {
 			    image = 'png/icon_location.png';
 			} else {
 				image = 'png/icon_location2.png';
