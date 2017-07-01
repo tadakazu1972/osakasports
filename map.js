@@ -41,7 +41,7 @@ function drawMap(){
 			//マーカー作成　画像ファイルを読み込み
 			var image;
       var j = 3 + num;
-			if (data[j]=="1") {
+			if (data[14]=="1") {
 			    image = 'png/icon_location.png';
 			} else {
 				image = 'png/icon_location2.png';
