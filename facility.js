@@ -67,10 +67,10 @@ function drawFacility(){
       if (data[2] == name){
         var item = document.createElement("div");
         item.className = "list";
-        //ホーム画面で選んだタイプのイベントなら背景を黄色にする
+        //ホーム画面で選んだタイプのイベントなら背景を色にする
         var j = 17 + Number(num); //17は配列の前データ＋ホーム画面で選んだ0番目からスタート
         if (data[j]=="1"){
-          item.style.background = "#2dd";
+          item.style.background = "#ffad90";
         }
         item.style.border = "solid";
         item.style.margin = "4px";
