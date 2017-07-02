@@ -9,14 +9,14 @@ function drawHome(){
   var header = document.getElementById("header"); //index.htmlからid=headerを確保
   header.innerHTML = "オータム・チャレンジ・スポーツ";
   //どんなスポーツしたい？
-  var txt = document.createElement("div");
+  /*var txt = document.createElement("div");
   txt.textContent = "どんなスポーツしたい？";
   txt.style.fontSize = 18 * ratio + "px";
   txt.style.fontWeight = "bold";
   txt.style.position = "absolute";
   txt.style.left = 13 * ratio + "%";
   txt.style.top  = 7 + "%";
-　document.body.appendChild(txt);
+　document.body.appendChild(txt);*/
   //ボタン描画
   var button = new Array();
   var img = new Array();

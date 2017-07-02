@@ -19,19 +19,54 @@ img {
   padding: 10px;
 }
 
+/*どんなスポーツしたい？*/
+.lblWhat {
+	position: absolute;
+	top: 8%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
+	color: #ff8181;/*文字色*/
+  display: inline-block;
+  height: 100%;/*高さ*/
+  width: 100%;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 5vw;/*文字のサイズ*/
+	font-weight: bold;
+	text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #ff82ca, 0px 2px 0px #ff6aa7, 0px 3px 0px #ff70ad;
+  line-height: 36px;/*高さと合わせる*/
+  vertical-align: middle;/*垂直中央寄せ*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+.lblWhat span {
+	display:inline-block;
+	transition: .7s;
+}
+
+.lblWhat:hover span {
+	-webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
 /*検索ボタン*/
 .btnSearch {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
 	color: #FFF;/*文字・アイコン色*/
   border-radius: 25px;/*角丸に*/
   display: inline-block;
-  height: 50px;/*高さ*/
-  width: 260px;/*幅*/
-	position: absolute;
-	top: 90%;
-	left: 35%;
+  height: 36px;/*高さ*/
+  width: 50%;/*幅*/
+	max-width: 360px;
   text-align: center;/*中身を中央寄せ*/
-  font-size: 25px;/*文字のサイズ*/
-  line-height: 50px;/*高さと合わせる*/
+  font-size: 18px;/*文字のサイズ*/
+  line-height: 36px;/*高さと合わせる*/
   vertical-align: middle;/*垂直中央寄せ*/
   background: #4966c0;
   overflow: hidden;/*はみ出た部分を隠す*/
