@@ -1,0 +1,60 @@
+body {
+	height:100%;
+	background: #fff;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+#header {
+  background: #eee;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/*検索ボタン*/
+.btnSearch {
+	color: #FFF;/*文字・アイコン色*/
+  border-radius: 25px;/*角丸に*/
+  display: inline-block;
+  height: 50px;/*高さ*/
+  width: 260px;/*幅*/
+	position: absolute;
+	top: 90%;
+	left: 35%;
+  text-align: center;/*中身を中央寄せ*/
+  font-size: 25px;/*文字のサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+  vertical-align: middle;/*垂直中央寄せ*/
+  background: #4966c0;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+	box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 6px #224466;
+}
+
+.btnSearch:active {
+	-ms-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.btnSearch span {
+	display:inline-block;
+	transition: .5s;
+}
+
+.btnSearch:hover span {/*ホバーで一回転*/
+	-webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}

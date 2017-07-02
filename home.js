@@ -52,19 +52,6 @@ function drawHome(){
     label[i].style.top  = buttonY[i] + 14 + "%";
   　document.body.appendChild(label[i]);
   }
-  //詳細検索ボタン
-  var btnSearch = document.createElement("button");
-  btnSearch.type = "button";
-  btnSearch.onclick = function(){ clickGotoSearch(); };
-  btnSearch.innerHTML = "　詳細検索　";
-  btnSearch.style.fontSize = 14 * ratio + "px";
-  btnSearch.style.fontWeight = "bold";
-  btnSearch.style.background = "#22e";
-  btnSearch.style.color = "#fff";
-  btnSearch.style.position = "absolute";
-  btnSearch.style.left = "40%";
-  btnSearch.style.top  = "90%";
-  document.body.appendChild(btnSearch);
 }
 
 function clickButton(num){
@@ -72,8 +59,4 @@ function clickButton(num){
   var num = encodeURIComponent(num);
   var param = "num="+num;
   location.href="./index2.html?"+param;
-}
-
-function clickGotoSearch(){
-  location.href="./search.html";
 }
