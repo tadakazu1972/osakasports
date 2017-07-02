@@ -2,10 +2,11 @@
 var facility = new Array(); //施設
 
 //施設クラス
-function Facility(_name, _lat, _lng ){
+function Facility(_name, _lat, _lng, _num ){
   this.name = _name;
   this.lat  = _lat;
   this.lng  = _lng;
+  this.num  = _num;
 }
 
 //マップ描画
@@ -55,7 +56,7 @@ function drawMap(){
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
       //読み込んだデータをfacilityクラスの配列に格納　ページ遷移時にパラメータ渡しで使います
-      facility[i] = new Facility(data[0], data[1], data[2]);
+      facility[i] = new Facility(data[0], data[1], data[2], num);
 		}
   };
   xhr.open("get", "facilities.csv", true);
@@ -79,6 +80,7 @@ function clickButtonMarker(num){
   var name = encodeURIComponent(facility[num].name);
   var lat  = encodeURIComponent(facility[num].lat);
   var lng  = encodeURIComponent(facility[num].lng);
-  var param = "name="+name+"&lat="+lat+"&lng="+lng;
+  var top  = encodeURIComponent(facility[num].num);
+  var param = "name="+name+"&lat="+lat+"&lng="+lng+"&num="+top;
   location.href = "./index3.html?"+param;
 }
