@@ -76,6 +76,11 @@ img {
 }
 
 .btnSearch:active {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
 	-ms-transform: translateY(4px);
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
