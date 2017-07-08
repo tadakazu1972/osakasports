@@ -67,7 +67,7 @@ function createInfoWindow(getmarker, name, i){
   var buttonMarker = document.createElement("button");
   buttonMarker.type = "button";
   buttonMarker.onclick = (function(num){ return function(){　clickButtonMarker(num);　};})(i); //もはや呪文
-  buttonMarker.innerHTML = name + "</br>" + "イベント情報";
+  buttonMarker.innerHTML = name;
   var infowindow = new google.maps.InfoWindow({ content: buttonMarker });
   google.maps.event.addListener(getmarker, "mouseover", function(){
     infowindow.open(getmarker.getMap(), getmarker);
@@ -82,5 +82,5 @@ function clickButtonMarker(num){
   var lng  = encodeURIComponent(facility[num].lng);
   var top  = encodeURIComponent(facility[num].num);
   var param = "name="+name+"&lat="+lat+"&lng="+lng+"&num="+top;
-  location.href = "./index3.html?"+param;
+  location.href = "./facility.html?"+param;
 }

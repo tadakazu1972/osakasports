@@ -75,7 +75,7 @@ function drawFacility(){
         item.style.border = "solid";
         item.style.margin = "4px";
         item.style.padding = "4px";
-        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
+        item.textContent = data[7]+"  "+data[4];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         document.body.appendChild(item);
       };
@@ -89,5 +89,5 @@ function clickList(num){
   //window.confirm("id:"+num+"がクリックされた");
   var _id = encodeURIComponent(eventData[num].id);
   var param = "id="+_id;
-  location.href = "./index4.html?"+param;
+  location.href = "./event.html?"+param;
 }

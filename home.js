@@ -8,15 +8,6 @@ function drawHome(){
   //ヘッダー
   var header = document.getElementById("header"); //index.htmlからid=headerを確保
   header.innerHTML = "オータム・チャレンジ・スポーツ";
-  //どんなスポーツしたい？
-  /*var txt = document.createElement("div");
-  txt.textContent = "どんなスポーツしたい？";
-  txt.style.fontSize = 18 * ratio + "px";
-  txt.style.fontWeight = "bold";
-  txt.style.position = "absolute";
-  txt.style.left = 13 * ratio + "%";
-  txt.style.top  = 7 + "%";
-　document.body.appendChild(txt);*/
   //ボタン描画
   var button = new Array();
   var img = new Array();
@@ -58,5 +49,5 @@ function clickButton(num){
   //window.confirm(num+"がクリックされたよ");
   var num = encodeURIComponent(num);
   var param = "num="+num;
-  location.href="./index2.html?"+param;
+  location.href="./map.html?"+param;
 }
