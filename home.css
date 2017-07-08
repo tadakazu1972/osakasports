@@ -94,6 +94,11 @@ img {
 }
 
 .btnSearch:hover span {/*ホバーで一回転*/
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
 	-webkit-transform: rotateX(360deg);
   -ms-transform: rotateX(360deg);
   transform: rotateX(360deg);
