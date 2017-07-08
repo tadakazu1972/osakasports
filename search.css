@@ -22,6 +22,7 @@ img {
 
 /*検索ボタン*/
 #btnSearch {
+	border: none;
 	position: absolute;
 	top: 90%;
 	left: 50%;
@@ -35,7 +36,7 @@ img {
 	max-width: 360px;
   text-align: center;/*中身を中央寄せ*/
   font-size: 18px;/*文字のサイズ*/
-  line-height: 36px;/*高さと合わせる*/
+  line-height: 28px;/*高さと合わせる*/
   vertical-align: middle;/*垂直中央寄せ*/
   background: #4966c0;
   overflow: hidden;/*はみ出た部分を隠す*/
