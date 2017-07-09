@@ -91,3 +91,38 @@ function clickList(num){
   var param = "id="+_id;
   location.href = "./event.html?"+param;
 }
+
+function clickDirection(){
+  //現在地取得
+  //Geolocation API対応チェック
+  if (navigator.geolocation){
+    //現在地取得
+    navigator.geolocation.getCurrentPosition(
+      //取得成功
+      function(position){
+        //緯度経度を変数に格納
+        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        window.confirm("現在地は："+latlng);
+      },
+      //取得失敗
+      function(error){
+        switch(error.code){
+          case 1: //PERMISSION_DENIED
+            alert("この端末の位置情報利用が許可されていません");
+            break;
+          case 2: //POSITION_UNAVAILABLE
+            alert("現在地が取得できませんできした");
+            break;
+          case 3: //TIMEOUT
+            alert("時間切れになりました");
+            break;
+          default:
+            alert("エラーが出ました(error code:"+error.code+")");
+            break;
+        }
+      }
+    );
+  } else {
+    alert("この端末では位置情報が取得できません");
+  }
+}

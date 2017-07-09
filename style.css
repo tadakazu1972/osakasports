@@ -43,41 +43,6 @@ img {
 	background: #ccc;
 }
 
-#date {
-	margin:20px;
-	height:20px;
-}
-
-#facility {
-	margin:20px;
-	height:20px;
-}
-
-#submit {
-	margin:20px;
-	height:20px;
-}
-
-#fee {
-	margin:20px;
-	height:20px;
-}
-
-#target {
-	margin:20px;
-	height:20px;
-}
-
-#station {
-	margin:20px;
-	height:20px;
-}
-
-#address {
-	margin:20px;
-	height:20px;
-}
-
 #tel {
 	margin:20px;
 	height: 40px;
@@ -100,22 +65,6 @@ img {
 	font-size: 20px;
 	font-weight: bold;
 	padding: 10px;
-}
-
-#calenderParent {
-	margin: 0 auto;
-	padding: 10px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-#sns {
-	margin: 10px;
-	padding: 10px;
-	text-align: center;
 }
 
 #search {

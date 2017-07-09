@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <link rel="stylesheet" href="style.css">
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjOYRH41YunVu6mzZkr6-K5y8QkdLAZSA&region=JP&language=ja&sensor=true"></script>-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjOYRH41YunVu6mzZkr6-K5y8QkdLAZSA&region=JP&language=ja"></script>
 <script type="text/javascript" src="facility.js"></script>
 </head>
 <body onload="drawFacility()">
   <div id="header"></div>
   <div class="bar">場所について</div>
   <div class="box">施設の詳細情報を見る</div>
-  <div class="box">マップで行き方を見る</div>
+  <div class="box" onclick="clickDirection()">マップで行き方を見る</div>
   <div class="bar">イベント一覧</div>
   <ul id="list" style="list-style:none;"></ul>
 </body>
