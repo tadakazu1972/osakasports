@@ -113,7 +113,7 @@ function clickDirection(){
         //マップ生成　表示領域を動的に拡大させる
         var mapCanvas = document.getElementById("map_canvas");
         mapCanvas.style.width = "100%";
-        mapCanvas.style.height = "200px";
+        mapCanvas.style.height = "300px";
         var map = new google.maps.Map(document.getElementById("map_canvas"), {
           center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
           zoom: 15
