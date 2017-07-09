@@ -1,5 +1,5 @@
 //グローバル
-var facility = new Array(); //施設
+var facility; //施設
 var eventData = new Array(); //イベントデータ全て格納
 
 //施設クラス
@@ -49,9 +49,11 @@ function drawFacility(){
   var lat  = decodeURIComponent(key["lat"]);
   var lng  = decodeURIComponent(key["lng"]);
   var num  = decodeURIComponent(key["num"]);
+  //グローバル変数のfacilityクラスのインスタンスに分解したパラメーター格納
+  facility = new Facility(name, lat, lng);
+  //ヘッダーに施設名を表示
   var header = document.getElementById("header");
   header.innerHTML = name;
-  //緯度経度をマップで行き方を見るに渡す
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -102,7 +104,30 @@ function clickDirection(){
       function(position){
         //緯度経度を変数に格納
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        window.confirm("現在地は："+latlng);
+        //ルート検索の条件
+        var request = {
+          origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), //出発地
+          destination: new google.maps.LatLng(facility.lat, facility.lng), //目的地
+          travelMode: google.maps.DirectionsTravelMode.WALKING, //交通手段：市内だから歩きでいいでしょう
+        };
+        //マップ生成
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+          center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+          zoom: 15
+        });
+        var d = new google.maps.DirectionsService(); //ルート検索オブジェクト
+        var r = new google.maps.DirectionsRenderer({ //ルート描画オブジェクト
+          map: map, //描画先のマップ
+          preserveViewport: true, //描画後に中心点をずらさない
+        });
+        //ルート検索
+        d.route(request, function(result, status){
+          //OKの場合ルート描画
+          if (status == google.maps.DirectionsStatus.OK) {
+            r.setDirections(result);
+          }
+        });
+        //window.confirm("現在地は："+latlng);
       },
       //取得失敗
       function(error){
