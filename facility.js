@@ -110,7 +110,10 @@ function clickDirection(){
           destination: new google.maps.LatLng(facility.lat, facility.lng), //目的地
           travelMode: google.maps.DirectionsTravelMode.WALKING, //交通手段：市内だから歩きでいいでしょう
         };
-        //マップ生成
+        //マップ生成　表示領域を動的に拡大させる
+        var mapCanvas = document.getElementById("map_canvas");
+        mapCanvas.style.width = "100%";
+        mapCanvas.style.height = "200px";
         var map = new google.maps.Map(document.getElementById("map_canvas"), {
           center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
           zoom: 15
