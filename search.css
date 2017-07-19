@@ -2,6 +2,7 @@ body {
 	height:100%;
 	background: #fff;
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 22px;
 }
 
 a {
@@ -19,6 +20,33 @@ img {
   padding: 10px;
 }
 
+#datefromMonth {
+	font-size: 22px;
+}
+
+#datefromDate {
+	font-size: 22px;
+}
+
+#datetoMonth {
+	font-size: 22px;
+}
+
+#datetoDate {
+	font-size: 22px;
+}
+
+#listFacility {
+	font-size: 22px;
+}
+
+#listCategory {
+	font-size: 22px;
+}
+
+#freeword {
+	font-size: 22px;
+}
 
 /*検索ボタン*/
 #btnSearch {
