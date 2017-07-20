@@ -216,5 +216,5 @@ function clickList(num){
   //window.confirm("id:"+num+"がクリックされた");
   var _id = encodeURIComponent(eventData[num].id);
   var param = "id="+_id;
-  location.href = "./index4.html?"+param;
+  location.href = "./event.html?"+param;
 }
