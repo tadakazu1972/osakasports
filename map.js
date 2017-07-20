@@ -53,6 +53,7 @@ function drawMap(){
 				icon: image,
 				title: data[0]
 			});
+      google.maps.event.addListener(marker, 'click', (function(num){ return function(){ clickButtonMarker(num); };})(i));
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0], i);
       //読み込んだデータをfacilityクラスの配列に格納　ページ遷移時にパラメータ渡しで使います
