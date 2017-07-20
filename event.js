@@ -70,15 +70,25 @@ function drawEvent(){
         var text = eventData[id].name;
         //var datefrom = '2014-06-10T17:00:00';
         //var dateto = '2014-06-10T18:00:00';
-        var location = eventData[i].address
-        var website = 'https://osakasports.azurewebsites.net/';
+        //開催日作成
+        var tempDateStr = data[7].substr(0,5); //開催日の文字列『１０月１０日（祝）」から「１０月１０」だけ切り出し
+        var tempDatePair = tempDateStr.split("月"); //月の文字で分割して配列にする
+        var date = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
         var zero = function(n) { return ('0' + n).slice(-2); };
+        var startDate = date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate());
+        var startTime = "9:00";
+        var endDate   = date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate());
+        var endTime   = "10:00";
+        var dates = startDate + 'T' + startTime + 'Z' + '/' + endDate + 'T' + endTime + 'Z';
+        //場所->住所
+        var location = eventData[i].address;
+        
         var formatdate = function(datestr) {
           var date = new Date(datestr + '+09:00');
           return date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate()) + 'T' + zero(date.getUTCHours()) + zero(date.getUTCMinutes()) + zero(date.getUTCSeconds()) + 'Z';
         };
         //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
-        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&location=' + location;
+        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + dates + '&location=' + location;
         document.getElementById("calender").setAttribute('href', url);
       };
     };
