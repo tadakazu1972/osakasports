@@ -79,7 +79,7 @@ function drawEvent(){
         var startTime = "0900";
         var endDate   = date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate());
         var endTime   = "1000";
-        var dates = startDate + 'T' + startTime + 'Z' + '/' + endDate + 'T' + endTime + '30';
+        var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
         var location = eventData[i].address;
 
