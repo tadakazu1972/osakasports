@@ -70,6 +70,7 @@ function drawEvent(){
         var text = eventData[id].name;
         //var datefrom = '2014-06-10T17:00:00';
         //var dateto = '2014-06-10T18:00:00';
+        var location = eventData[i].address
         var website = 'https://osakasports.azurewebsites.net/';
         var zero = function(n) { return ('0' + n).slice(-2); };
         var formatdate = function(datestr) {
@@ -77,7 +78,7 @@ function drawEvent(){
           return date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate()) + 'T' + zero(date.getUTCHours()) + zero(date.getUTCMinutes()) + zero(date.getUTCSeconds()) + 'Z';
         };
         //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
-        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&location=' + website;
+        var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&location=' + location;
         document.getElementById("calender").setAttribute('href', url);
       };
     };
