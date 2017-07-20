@@ -53,8 +53,9 @@ function drawMap(){
 				icon: image,
 				title: data[0]
 			});
+      google.maps.event.addListener(marker, 'click', (function(num){ return function(){ clickMarker(num); };})(i));
       //InfoWindow内にボタン生成
-			createInfoWindow(marker, data[0], i);
+			createInfoWindow(marker, data[0]);
       //読み込んだデータをfacilityクラスの配列に格納　ページ遷移時にパラメータ渡しで使います
       facility[i] = new Facility(data[0], data[1], data[2], num);
 		}
@@ -63,18 +64,14 @@ function drawMap(){
 	xhr.send(null);
 }
 
-function createInfoWindow(getmarker, name, i){
-  var buttonMarker = document.createElement("button");
-  buttonMarker.type = "button";
-  buttonMarker.onclick = (function(num){ return function(){　clickButtonMarker(num);　};})(i); //もはや呪文
-  buttonMarker.innerHTML = name;
-  var infowindow = new google.maps.InfoWindow({ content: buttonMarker });
+function createInfoWindow(getmarker, name){
+  var infowindow = new google.maps.InfoWindow({ content: name });
   google.maps.event.addListener(getmarker, "mouseover", function(){
     infowindow.open(getmarker.getMap(), getmarker);
   });
 }
 
-function clickButtonMarker(num){
+function clickMarker(num){
   //window.confirm(facility[num].name+"がクリックされた");
   //var name = escape(facility[num].name);　非推奨
   var name = encodeURIComponent(facility[num].name);
