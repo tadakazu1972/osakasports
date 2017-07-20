@@ -75,9 +75,9 @@ function drawEvent(){
         var tempDatePair = tempDateStr.split("月"); //月の文字で分割して配列にする
         var date = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
         var zero = function(n) { return ('0' + n).slice(-2); };
-        var startDate = date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate());
+        var startDate = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
         var startTime = "090000";
-        var endDate   = date.getUTCFullYear() + zero(date.getUTCMonth()+1) + zero(date.getUTCDate());
+        var endDate   = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
         var endTime   = "100000";
         var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
