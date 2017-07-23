@@ -20,42 +20,42 @@ img {
 }
 
 #date {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #time {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #facility {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #submit {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #fee {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #target {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #station {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
 #address {
-	margin:20px;
+	margin:8px;
 	height:20px;
 }
 
@@ -97,16 +97,16 @@ img {
 #calendarParent {
 	margin: 0 auto;
 	padding: 8px;
-	height: 40px;
+	height: 20px;
 	text-align: center;
-	line-height: 40px;
+	line-height: 20px;
 	font-size: 20px;
 	font-weight: bold;
 }
 
 #sns {
-	margin: 5px;
-	padding: 5px;
+	margin: 4px;
+	padding: 4px;
 	text-align: center;
 }
 
