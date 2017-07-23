@@ -23,6 +23,7 @@ function drawHome(){
     button[i].style.top  = buttonY[i] + "%";
     button[i].style.background = "transparent";
     button[i].style.border = "none";
+    button[i].style.cursor = "pointer";
     img[i] = document.createElement("img");
     img[i].src = "png/" + imageFile[i] + ".png";
     img[i].widh = 70 * ratio;
