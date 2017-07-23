@@ -113,5 +113,6 @@ function postLine(){
 
 function postFacebook(){
   //Facebook
-  location.href= "https://www.facebook.com/sharer/sharer.php?u=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
+  var url = "https://osakasports.azurewebsites.net/event.html?id=" + id;
+  location.href= "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 }
