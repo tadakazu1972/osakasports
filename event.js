@@ -107,6 +107,6 @@ function drawEvent(){
 
 function postTwitter(){
   //Twitter
-  location.href = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + enentData[id].date + "/" + eventData[id].time;
+  location.href = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
   return false;
 }
