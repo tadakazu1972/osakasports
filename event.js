@@ -108,7 +108,7 @@ function postTwitter(){
 
 function postLine(){
   //LINE
-  location.href = "http://line.me/R/msg/text/?https://osakasports.azurewebsites.net/event.html?id="+id + "[大阪市オータムチャレンジスポーツ2017]" +eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
+  location.href = "http://line.me/R/msg/text/?https://osakasports.azurewebsites.net/event.html?id="+id + "【大阪市オータムチャレンジスポーツ2017】" +eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
 }
 
 function postFacebook(){
