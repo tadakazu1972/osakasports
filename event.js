@@ -68,6 +68,7 @@ function drawEvent(){
         station.innerHTML = "最寄駅：" + eventData[i].station;
         var address = document.getElementById("address");
         address.innerHTML = "所在地：" + eventData[i].address;
+
         //Googleカレンダー登録準備
         var text = eventData[id].name;
         //var datefrom = '2014-06-10T17:00:00';
@@ -91,7 +92,11 @@ function drawEvent(){
         };
         //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
         var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + dates + '&location=' + location;
-        document.getElementById("calender").setAttribute('href', url);
+        document.getElementById("calendar").setAttribute('href', url);
+
+        //Twitter
+        var urlTwitter = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + enentData[id].date + "/" + eventData[id].time;
+        document.getElementById("twitter").setAttribute("href", urlTwitter);
       };
     };
   };
