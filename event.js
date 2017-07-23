@@ -53,7 +53,9 @@ function drawEvent(){
         var header = document.getElementById("header");
         header.innerHTML = eventData[id].name;
         var date = document.getElementById("date");
-        date.innerHTML = "日時：" + eventData[id].date + "  " + eventData[id].time;
+        date.innerHTML = "日：" + eventData[id].date;
+        var time = document.getElementById("time");
+        time.innerHTML = "時間：" + eventData[id].time;
         var facility = document.getElementById("facility");
         facility.innerHTML = "場所：" + eventData[i].facility;
         var submit = document.getElementById("submit");
