@@ -96,10 +96,9 @@ img {
 
 #calendarParent {
 	margin: 0 auto;
-	padding: 8px;
-	height: 20px;
+	height: 10px;
 	text-align: center;
-	line-height: 20px;
+	line-height: 10px;
 	font-size: 20px;
 	font-weight: bold;
 }
