@@ -1,6 +1,7 @@
 //グローバル
 var facility = new Array(); //施設
 var eventData = new Array(); //イベントデータ全て格納
+var id; //id
 
 //施設クラス
 function Facility(_name, _lat, _lng ){
@@ -37,7 +38,7 @@ function drawEvent(){
   param = param.substring(1); //先頭の?をカット
   var temp = "";
   temp = param.split("="); //id=_idを=で分割
-  var id = decodeURIComponent(temp[1]);
+  id = decodeURIComponent(temp[1]);
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -102,4 +103,10 @@ function drawEvent(){
   };
   xhr.open("get", "data.csv", true);
   xhr.send(null);
+}
+
+function postTwitter(){
+  //Twitter
+  location.href = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + enentData[id].date + "/" + eventData[id].time;
+  return false;
 }
