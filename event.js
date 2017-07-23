@@ -94,10 +94,6 @@ function drawEvent(){
         //var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + formatdate(datefrom) + '/' + formatdate(dateto) + '&location=' + website;
         var url = 'http://www.google.com/calendar/event?action=TEMPLATE' + '&text=' + encodeURIComponent(text) + '&dates=' + dates + '&location=' + location;
         document.getElementById("calendar").setAttribute('href', url);
-
-        //Twitter
-        var urlTwitter = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + enentData[id].date + "/" + eventData[id].time;
-        document.getElementById("twitter").setAttribute("href", urlTwitter);
       };
     };
   };
@@ -108,5 +104,4 @@ function drawEvent(){
 function postTwitter(){
   //Twitter
   location.href = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=" + eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
-  return false;
 }
