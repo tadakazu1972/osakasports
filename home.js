@@ -26,8 +26,8 @@ function drawHome(){
     button[i].style.cursor = "pointer";
     img[i] = document.createElement("img");
     img[i].src = "png/" + imageFile[i] + ".png";
-    img[i].widh = 70 * ratio;
-    img[i].height = 70 * ratio;
+    img[i].widh = 65 * ratio;
+    img[i].height = 65 * ratio;
     document.body.appendChild(button[i]);
     button[i].appendChild(img[i]);
   }
@@ -38,7 +38,6 @@ function drawHome(){
     label[i] = document.createElement("div");
     label[i].textContent = labelText[i];
     label[i].style.fontSize = 9 * ratio + "px";
-    label[i].style.fontWeight = "bold";
     label[i].style.position = "absolute";
     label[i].style.left = buttonX[i] + "%";
     label[i].style.top  = buttonY[i] + 14 + "%";
