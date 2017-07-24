@@ -95,15 +95,25 @@ img {
 }
 
 #calendarParent {
+	position: absolute;
+	top: 73%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
 	margin: 0 auto;
-	height: 10px;
+	height: 20px;
 	text-align: center;
-	line-height: 10px;
-	font-size: 20px;
+	line-height: 20px;
+	font-size: 16px;
 	font-weight: bold;
 }
 
 #sns {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit- transform: translateX(-50%);
 	margin: 4px;
 	padding: 4px;
 	text-align: center;
