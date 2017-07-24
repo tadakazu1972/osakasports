@@ -17,6 +17,8 @@ img {
 	border: 0;
 }
 
+* {-webkit-tap-highlight-color: rgba(255,105,183,0.6);}
+
 #header {
   background: #eee;
   text-align: center;
