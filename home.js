@@ -7,13 +7,13 @@ function drawHome(){
   if (ratio > 2.0){ ratio = 2.0;}; //PCで見た場合あまりに画像が大きくなりすぎるので２倍でとどめる
   //ヘッダー
   var header = document.getElementById("header"); //index.htmlからid=headerを確保
-  header.innerHTML = "オータム・チャレンジ・スポーツ";
+  header.innerHTML = "大阪市オータム・チャレンジ・スポーツ";
   //ボタン描画
   var button = new Array();
   var img = new Array();
-  var imageFile = ["katakori","commit","squat","kirei","kaisyagaeri","gati","bocchi","wakaimon","oyako","taiikunohi","tennis","pool_oyako"];
+  var imageFile = ["1_itai_org","3_joutai_org","2_yasetai_org","4_kirei_org","6_shin_org","5_minna_org","7_hitori_org","9_wakai_org","8_oyako_org","10_kodomo_org","12_taiken_org","11_naraitai_org"];
   var buttonX = [ 5,70,40, 5,70,40, 5,70,40, 5,70,40];
-  var buttonY = [10,10,13,30,30,33,55,55,53,75,75,70];
+  var buttonY = [13,13,13,33,33,33,53,53,53,73,73,73];
   for (var i in imageFile){
     button[i] = document.createElement("button");
     button[i].type = "button";
@@ -37,7 +37,7 @@ function drawHome(){
   for (var i in labelText){
     label[i] = document.createElement("div");
     label[i].textContent = labelText[i];
-    label[i].style.fontSize = 12 * ratio + "px";
+    label[i].style.fontSize = 9 * ratio + "px";
     label[i].style.fontWeight = "bold";
     label[i].style.position = "absolute";
     label[i].style.left = buttonX[i] + "%";
