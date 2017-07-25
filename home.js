@@ -37,10 +37,10 @@ function drawHome(){
   for (var i in labelText){
     label[i] = document.createElement("div");
     label[i].textContent = labelText[i];
-    label[i].style.fontSize = 9 * ratio + "px";
+    label[i].style.fontSize = 12 * ratio + "px";
     label[i].style.position = "absolute";
     label[i].style.left = buttonX[i] + "%";
-    label[i].style.top  = buttonY[i] + 14 + "%";
+    label[i].style.top  = buttonY[i] + 15 + "%";
   　document.body.appendChild(label[i]);
   }
 }

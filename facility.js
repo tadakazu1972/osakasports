@@ -3,10 +3,13 @@ var facility; //施設
 var eventData = new Array(); //イベントデータ全て格納
 
 //施設クラス
-function Facility(_name, _lat, _lng ){
+function Facility(_name, _lat, _lng, _address, _tel, _url){
   this.name = _name;
   this.lat  = _lat;
   this.lng  = _lng;
+  this.address = _address;
+  this.tel = _tel;
+  this.url = _url;
 }
 
 //イベントデータクラス
@@ -48,12 +51,18 @@ function drawFacility(){
   var name = decodeURIComponent(key["name"]);
   var lat  = decodeURIComponent(key["lat"]);
   var lng  = decodeURIComponent(key["lng"]);
+  var address = decodeURIComponent(key["address"]);
+  var tel = decodeURIComponent(key["tel"]);
+  var url = decodeURIComponent(key["url"]);
   var num  = decodeURIComponent(key["num"]);
   //グローバル変数のfacilityクラスのインスタンスに分解したパラメーター格納
-  facility = new Facility(name, lat, lng);
+  facility = new Facility(name, lat, lng, address, tel, url);
   //ヘッダーに施設名を表示
   var header = document.getElementById("header");
   header.innerHTML = name;
+  //施設情報書き込み
+  document.getElementById("address").innerHTML = address;
+  document.getElementById("tel").innerHTML = tel;
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -83,7 +92,7 @@ function drawFacility(){
       };
     };
   };
-  xhr.open("get", "data.csv", true);
+  xhr.open("get", "data2017.csv", true);
   xhr.send(null);
 }
 
@@ -92,6 +101,10 @@ function clickList(num){
   var _id = encodeURIComponent(eventData[num].id);
   var param = "id="+_id;
   location.href = "./event.html?"+param;
+}
+
+function clickURL(){
+  location.href = facility.url;
 }
 
 function clickDirection(){

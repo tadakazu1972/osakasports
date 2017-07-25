@@ -2,10 +2,13 @@
 var facility = new Array(); //施設
 
 //施設クラス
-function Facility(_name, _lat, _lng, _num ){
+function Facility(_name, _lat, _lng, _address, _tel, _url, _num ){
   this.name = _name;
   this.lat  = _lat;
   this.lng  = _lng;
+  this.address = _address;
+  this.tel = _tel;
+  this.url = _url;
   this.num  = _num;
 }
 
@@ -57,10 +60,10 @@ function drawMap(){
       //InfoWindow内にボタン生成
 			createInfoWindow(marker, data[0]);
       //読み込んだデータをfacilityクラスの配列に格納　ページ遷移時にパラメータ渡しで使います
-      facility[i] = new Facility(data[0], data[1], data[2], num);
+      facility[i] = new Facility(data[0], data[1], data[2], data[15], data[16], data[17], num);
 		}
   };
-  xhr.open("get", "facilities.csv", true);
+  xhr.open("get", "facilities2017.csv", true);
 	xhr.send(null);
 }
 
@@ -77,7 +80,10 @@ function clickMarker(num){
   var name = encodeURIComponent(facility[num].name);
   var lat  = encodeURIComponent(facility[num].lat);
   var lng  = encodeURIComponent(facility[num].lng);
+  var address = encodeURIComponent(facility[num].address);
+  var tel = encodeURIComponent(facility[num].tel);
+  var url = encodeURIComponent(facility[num].url);
   var top  = encodeURIComponent(facility[num].num);
-  var param = "name="+name+"&lat="+lat+"&lng="+lng+"&num="+top;
+  var param = "name="+name+"&lat="+lat+"&lng="+lng+"&address="+address+"&tel="+tel+"&url="+url+"&num="+top;
   location.href = "./facility.html?"+param;
 }

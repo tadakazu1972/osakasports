@@ -1,13 +1,5 @@
 //グローバル
-var facility = new Array(); //施設
 var eventData = new Array(); //イベントデータ全て格納
-
-//施設クラス
-function Facility(_name, _lat, _lng ){
-  this.name = _name;
-  this.lat  = _lat;
-  this.lng  = _lng;
-}
 
 //イベントデータクラス
 function EventData(_id, _file, _facility, _place, _name, _category, _top, _date, _time, _submit, _fee, _target, _station, _address, _tel, _question, _etc){
@@ -68,8 +60,8 @@ function drawResult(){
       //日付処理:引き継いだパラメータから検索開始日と検索終了日をDate型でつくり、csvから開催日をDate型をつくり、比較させる
       var date1 = new Date(2017, fromMonth-1, fromDate); //月は-1を忘れずに!!
       var date2 = new Date(2017, toMonth-1, toDate);
-      var tempDateStr = data[7].substr(0,5); //開催日の文字列『１０月１０日（祝）」から「１０月１０」だけ切り出し
-      var tempDatePair = tempDateStr.split("月"); //月の文字で分割して配列にする
+      var tempDateStr = data[7].substr(0,5); //開催日の文字列『１０/１０（祝）」から「１０/１０」だけ切り出し
+      var tempDatePair = tempDateStr.split("/"); //"/"の文字で分割して配列にする
       var date3 = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
       //３つのDateを比較し、はさまれた開催日のみ表示
       if (date1 <= date3){
@@ -161,54 +153,9 @@ function drawResult(){
           };
         };
       };
-
-      /*//該当施設のデータを表示
-      if (facility == "すべて" || facility == data[2]){
-        var item = document.createElement("div");
-        item.className = "list";
-        item.style.border = "solid";
-        item.style.margin = "4px";
-        item.style.padding = "4px";
-        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        document.body.appendChild(item);
-      };*/
-      /*//該当競技のデータを表示
-      if (category == "すべて" || category == data[5]){
-        var item = document.createElement("div");
-        item.className = "list";
-        item.style.border = "solid";
-        item.style.margin = "4px";
-        item.style.padding = "4px";
-        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        document.body.appendChild(item);
-      };*/
-      /*//施設と競技
-      if (facility == data[2] && category == data[5]){
-        var item = document.createElement("div");
-        item.className = "list";
-        item.style.border = "solid";
-        item.style.margin = "4px";
-        item.style.padding = "4px";
-        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        document.body.appendChild(item);
-      };*/
-      /*//フリーワードを含むか
-      if (tempArray[i].match(word)){
-        var item = document.createElement("div");
-        item.className = "list";
-        item.style.border = "solid";
-        item.style.margin = "4px";
-        item.style.padding = "4px";
-        item.textContent = data[7]+"  "+data[4]+"  "+data[2];
-        item.onclick = (function(num){ return function(){ clickList(num); };})(i);
-        document.body.appendChild(item);
-      }*/
     };
   };
-  xhr.open("get", "data.csv", true);
+  xhr.open("get", "data2017.csv", true);
   xhr.send(null);
 }
 
