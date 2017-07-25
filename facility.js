@@ -83,6 +83,9 @@ function drawFacility(){
         if (data[j]=="1"){
           item.style.background = "#ffad90";
         }
+        if (window.innerWidth >= 640){
+          item.style.width = "632px";
+        }
         item.style.margin = "auto";
         item.style.border = "solid";
         item.style.padding = "4px";
