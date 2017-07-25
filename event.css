@@ -28,47 +28,7 @@ img {
 }
 
 #content {
-	margin:8px;
-}
-
-#date {
-	margin:8px;
-	height:20px;
-}
-
-#time {
-	margin:8px;
-	height:20px;
-}
-
-#facility {
-	margin:8px;
-	height:20px;
-}
-
-#submit {
-	margin:8px;
-	height:20px;
-}
-
-#fee {
-	margin:8px;
-	height:20px;
-}
-
-#target {
-	margin:8px;
-	height:20px;
-}
-
-#station {
-	margin:8px;
-	height:20px;
-}
-
-#address {
-	margin:8px;
-	height:20px;
+	padding:8px;
 }
 
 /*申し込みボタン*/
