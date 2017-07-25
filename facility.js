@@ -86,6 +86,7 @@ function drawFacility(){
         item.style.border = "solid";
         item.style.margin = "4px";
         item.style.padding = "4px";
+        item.style.cursor = "pointer";
         item.textContent = data[7]+"  "+data[4];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         document.body.appendChild(item);
