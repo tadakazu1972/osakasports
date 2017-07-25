@@ -86,8 +86,7 @@ function drawFacility(){
         if (window.innerWidth >= 640){
           item.style.width = "640px";
         }
-        item.style.margin-left = "auto";
-        item.style.margin-right = "auto";
+        item.style.margin = "auto";
         item.style.border = "solid";
         item.style.padding = "4px";
         item.style.cursor = "pointer";
