@@ -97,7 +97,7 @@ function drawEvent(){
       };
     };
   };
-  xhr.open("get", "data.csv", true);
+  xhr.open("get", "data2017.csv", true);
   xhr.send(null);
 }
 
