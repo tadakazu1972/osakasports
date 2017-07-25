@@ -71,7 +71,7 @@ function drawResult(){
               if (word == ""){
                 var item = document.createElement("div");
                 item.className = "list";
-                item.style.max-width = "640px";
+                item.style.width = "100%";
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
