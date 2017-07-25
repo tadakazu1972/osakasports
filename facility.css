@@ -39,40 +39,9 @@ img {
 	color: #00f;
 	font-weight: bold;
 	padding: 10px;
+	cursor: pointer;
 }
 
 .list:hover {
 	background: #ccc;
-}
-
-#tel {
-	margin:20px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
-	background: #22b;
-	color: #fff;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 10px;
-}
-
-#mail {
-	margin:20px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
-	background: #22b;
-	color: #fff;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 10px;
-}
-
-#search {
-	margin: 0 auto;
-	padding: 10px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
 }
