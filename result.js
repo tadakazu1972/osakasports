@@ -74,6 +74,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -83,6 +84,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -94,6 +96,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -103,6 +106,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -116,6 +120,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -125,6 +130,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -136,6 +142,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
@@ -145,6 +152,7 @@ function drawResult(){
                 item.style.border = "solid";
                 item.style.margin = "4px";
                 item.style.padding = "4px";
+                item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
                 item.onclick = (function(num){ return function(){ clickList(num); };})(i);
                 document.body.appendChild(item);
