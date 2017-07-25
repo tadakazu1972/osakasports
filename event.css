@@ -27,6 +27,10 @@ img {
   padding: 10px;
 }
 
+#content {
+	margin:8px;
+}
+
 #date {
 	margin:8px;
 	height:20px;
