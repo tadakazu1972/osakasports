@@ -86,7 +86,10 @@ function drawFacility(){
         if (window.innerWidth >= 640){
           item.style.width = "640px";
         }
+        item.style.margin-left = "auto";
+        item.style.margin-right = "auto";
         item.style.border = "solid";
+        item.style.padding = "4px";
         item.style.cursor = "pointer";
         item.textContent = data[7]+"  "+data[4];
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
