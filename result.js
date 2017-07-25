@@ -72,7 +72,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -82,7 +85,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -94,7 +100,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -104,7 +113,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -118,7 +130,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -128,7 +143,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -140,7 +158,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];
@@ -150,7 +171,10 @@ function drawResult(){
                 var item = document.createElement("div");
                 item.className = "list";
                 item.style.border = "solid";
-                item.style.margin = "4px";
+                if (window.innerWidth >= 640){
+                  item.style.width = "630px";
+                }
+                item.style.margin = "auto";
                 item.style.padding = "4px";
                 item.style.cursor = "pointer";
                 item.textContent = data[7]+"  "+data[4]+"  "+data[2];

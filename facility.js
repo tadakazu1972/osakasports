@@ -84,7 +84,7 @@ function drawFacility(){
           item.style.background = "#ffad90";
         }
         if (window.innerWidth >= 640){
-          item.style.width = "632px";
+          item.style.width = "630px";
         }
         item.style.margin = "auto";
         item.style.border = "solid";
