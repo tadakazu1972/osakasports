@@ -28,7 +28,11 @@ img {
 }
 
 #eventData {
-	padding:8px;
+	padding: 8px;
+}
+
+#desc {
+	padding: 8px;
 }
 
 /*申し込みボタン*/
