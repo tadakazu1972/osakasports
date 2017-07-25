@@ -60,7 +60,7 @@ function drawResult(){
       //日付処理:引き継いだパラメータから検索開始日と検索終了日をDate型でつくり、csvから開催日をDate型をつくり、比較させる
       var date1 = new Date(2017, fromMonth-1, fromDate); //月は-1を忘れずに!!
       var date2 = new Date(2017, toMonth-1, toDate);
-      var tempDateStr = data[7].substr(0,5); //開催日の文字列『１０/１０（祝）」から「１０/１０」だけ切り出し
+      var tempDateStr = data[7].slice(0,-3); //開催日の文字列『１０/９（祝）」から「（祝）」を捨てる
       var tempDatePair = tempDateStr.split("/"); //"/"の文字で分割して配列にする
       var date3 = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
       //３つのDateを比較し、はさまれた開催日のみ表示
