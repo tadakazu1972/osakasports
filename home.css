@@ -1,3 +1,9 @@
+.block {
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 body {
 	height:100%;
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
@@ -22,7 +28,7 @@ img {
 #header {
   background: #eee;
   text-align: center;
-	font-size: 4vw;
+	font-size: 24px;
   font-weight: bold;
   padding: 10px;
 }
@@ -39,7 +45,7 @@ img {
   height: 100%;/*高さ*/
   width: 100%;/*幅*/
   text-align: center;/*中身を中央寄せ*/
-  font-size: 5vw;/*文字のサイズ*/
+  font-size: 24px;/*文字のサイズ*/
 	font-weight: bold;
 	text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #ff82ca, 0px 2px 0px #ff6aa7, 0px 3px 0px #ff70ad;
   line-height: 36px;/*高さと合わせる*/
