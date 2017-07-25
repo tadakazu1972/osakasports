@@ -90,7 +90,7 @@ function drawFacility(){
         item.style.border = "solid";
         item.style.padding = "4px";
         item.style.cursor = "pointer";
-        item.innerHTML = "<b>"+data[7]+"  "+data[4]+"</b><br>"+eventData[i].top.substr(0,32)+"...";
+        item.innerHTML = "<b>"+data[7]+"  "+data[4]+"</b><br>"+eventData[i].top.substr(0,38);
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         document.body.appendChild(item);
       };
