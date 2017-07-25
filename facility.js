@@ -87,7 +87,7 @@ function drawFacility(){
           item.style.width = "640px";
         }
         item.style.border = "solid";
-        item.style.margin = "4px";
+        item.style.margin = "auto";
         item.style.padding = "4px";
         item.style.cursor = "pointer";
         item.textContent = data[7]+"  "+data[4];
