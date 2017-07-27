@@ -54,9 +54,7 @@ function drawEvent(){
         var header = document.getElementById("header");
         header.innerHTML = eventData[id].name;
         var content = document.getElementById("eventData");
-        content.innerHTML = "<b>【開催日】</b>"+eventData[id].date+"<br><b>【時間】</b>"+eventData[id].time+"<br><b>【場所】</b>"+eventData[i].facility +"<br><b>【申込方法】</b>"+eventData[i].submit+"<br><b>【参加費】</b>"+eventData[i].fee+"<br><b>【参加対象】</b>"+eventData[i].target+"<br><b>【最寄駅】</b>"+eventData[i].station+"<br><b>【所在地】</b>"+eventData[i].address+"<br><b>【お問い合わせ】</b>"+eventData[i].question;
-        var desc = document.getElementById("desc");
-        desc.innerHTML = "<b>【内容】</b>"+eventData[i].top;
+        content.innerHTML = "<b>【開催日】</b>"+eventData[id].date+"<br><b>【時間】</b>"+eventData[id].time+"<br><b>【場所】</b>"+eventData[i].facility +"<br><b>【内容】</b>"+eventData[i].top+"<br><b>【申込方法】</b>"+eventData[i].submit+"<br><b>【参加費】</b>"+eventData[i].fee+"<br><b>【参加対象】</b>"+eventData[i].target+"<br><b>【最寄駅】</b>"+eventData[i].station+"<br><b>【所在地】</b>"+eventData[i].address+"<br><b>【お問い合わせ】</b>"+eventData[i].question;
 
         //Googleカレンダー登録準備
         var text = eventData[id].name;
