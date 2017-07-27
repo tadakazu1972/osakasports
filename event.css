@@ -30,6 +30,7 @@ img {
 .eventData tr th {
 	width: 80px;
 	background: #e6eaff;
+	font-size: 14px;
 }
 
 #calendarParent {
