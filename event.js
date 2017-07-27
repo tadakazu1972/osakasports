@@ -67,9 +67,9 @@ function drawEvent(){
         var date = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
         var zero = function(n) { return ('0' + n).slice(-2); };
         var startDate = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var startTime = tempTimePair[0].replace(/~/g, "")+"00";
+        var startTime = tempTimePair[0];
         var endDate   = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var endTime   = tempTimePair[1].replace(/~/g, "")+"00";
+        var endTime   = tempTimePair[1];
         var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
         var location = eventData[i].address;
