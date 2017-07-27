@@ -63,12 +63,13 @@ function drawEvent(){
         //開催日作成
         var tempDateStr = data[7].slice(0,-3); //開催日の文字列『１０/９（祝）」から「（祝）」を捨てる
         var tempDatePair = tempDateStr.split("/"); //""/""の文字で分割して配列にする
+        var tempTimePair = data[8].split("~");
         var date = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
         var zero = function(n) { return ('0' + n).slice(-2); };
         var startDate = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var startTime = "090000";
+        var startTime = tempTimePair[0];
         var endDate   = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var endTime   = "180000";
+        var endTime   = tempTimePair[1];
         var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
         var location = eventData[i].address;
