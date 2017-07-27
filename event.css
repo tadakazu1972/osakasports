@@ -27,8 +27,8 @@ img {
   padding: 10px;
 }
 
-#eventData {
-	padding: 8px;
+.eventData tr th {
+	background: #e6eaff;
 }
 
 #calendarParent {

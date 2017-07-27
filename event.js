@@ -52,7 +52,7 @@ function drawEvent(){
       //該当idのデータを表示
       if (data[0] == id){
         document.getElementById("header").innerHTML = eventData[id].name;
-        document.getElementById("eventData").innerHTML = eventData[id].date;
+        document.getElementById("date").innerHTML = eventData[id].date;
         document.getElementById("time").innerHTML = eventData[id].time;
         document.getElementById("place").innerHTML = eventData[i].facility;
         document.getElementById("content").innerHTML = eventData[i].top;
