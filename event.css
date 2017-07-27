@@ -28,6 +28,7 @@ img {
 }
 
 .eventData tr th {
+	width: 80px;
 	background: #e6eaff;
 }
 
