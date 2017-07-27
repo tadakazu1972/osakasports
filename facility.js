@@ -86,11 +86,12 @@ function drawFacility(){
         if (window.innerWidth >= 640){
           item.style.width = "630px";
         }
+        item.style.overflow = "hidden";
         item.style.margin = "auto";
         item.style.border = "solid";
         item.style.padding = "4px";
         item.style.cursor = "pointer";
-        item.innerHTML = "<b>"+data[7]+"  "+data[4]+"</b><br>"+eventData[i].top.substr(0,38);
+        item.innerHTML = "<b>"+data[7]+"  "+data[4]+"</b><br>"+eventData[i].top;
         item.onclick = (function(num){ return function(){ clickList(num); };})(i);
         document.body.appendChild(item);
       };
