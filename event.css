@@ -36,7 +36,9 @@ img {
 }
 
 #calendarParent {
-	margin: 0 auto;
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
 	height: 20px;
 	text-align: center;
 	line-height: 20px;
