@@ -51,10 +51,17 @@ function drawEvent(){
       eventData[i] = new EventData(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16]);
       //該当idのデータを表示
       if (data[0] == id){
-        var header = document.getElementById("header");
-        header.innerHTML = eventData[id].name;
-        var content = document.getElementById("eventData");
-        content.innerHTML = "<b>【開催日】</b>"+eventData[id].date+"<br><b>【時間】</b>"+eventData[id].time+"<br><b>【場所】</b>"+eventData[i].facility +"<br><b>【内容】</b>"+eventData[i].top+"<br><b>【申込方法】</b>"+eventData[i].submit+"<br><b>【参加費】</b>"+eventData[i].fee+"<br><b>【参加対象】</b>"+eventData[i].target+"<br><b>【最寄駅】</b>"+eventData[i].station+"<br><b>【所在地】</b>"+eventData[i].address+"<br><b>【お問い合わせ】</b>"+eventData[i].question;
+        document.getElementById("header").innerHTML = eventData[id].name;
+        document.getElementById("eventData").innerHTML = eventData[id].date;
+        document.getElementById("time").innerHTML = eventData[id].time;
+        document.getElementById("place").innerHTML = eventData[i].facility;
+        document.getElementById("content").innerHTML = eventData[i].top;
+        document.getElementById("submit").innerHTML = eventData[i].submit;
+        document.getElementById("fee").innerHTML = eventData[i].fee;
+        document.getElementById("target").innerHTML = eventData[i].target;
+        document.getElementById("station").innerHTML = eventData[i].station;
+        document.getElementById("address").innerHTML = eventData[i].address;
+        document.getElementById("question").innerHTML = eventData[i].question;
 
         //Googleカレンダー登録準備
         var text = eventData[id].name;
