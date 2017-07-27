@@ -68,7 +68,7 @@ function drawEvent(){
         var startDate = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
         var startTime = "090000";
         var endDate   = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var endTime   = "100000";
+        var endTime   = "180000";
         var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
         var location = eventData[i].address;
