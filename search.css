@@ -25,7 +25,7 @@ img {
   background: #eee;
   text-align: center;
   font-weight: bold;
-  padding: 10px;
+  padding: 4px;
 }
 
 #datefromMonth {
@@ -89,4 +89,47 @@ img {
 	-webkit- transform: translateX(-50%);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
+}
+
+/* iPhone5s, SE ---------------------------------------------*/
+@media (max-width:320px){
+	#header {
+		background: #eee;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+		padding: 2px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	#datefromMonth {
+		font-size: 14px;
+	}
+
+	#datefromDate {
+		font-size: 14px;
+	}
+
+	#datetoMonth {
+		font-size: 14px;
+	}
+
+	#datetoDate {
+		font-size: 14px;
+	}
+
+	#listFacility {
+		font-size: 14px;
+	}
+
+	#listCategory {
+		font-size: 14px;
+	}
+
+	#freeword {
+		font-size: 14px;
+	}
 }
