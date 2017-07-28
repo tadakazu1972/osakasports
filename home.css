@@ -30,7 +30,7 @@ img {
   text-align: center;
 	font-size: 4vw;
   font-weight: bold;
-  padding: 10px;
+  padding: 2px;
 }
 
 /*どんなスポーツしたい？*/
@@ -123,7 +123,6 @@ img {
   border-bottom: solid 6px #994400;
 }
 
-
 .btnSearch:active {
 	position: absolute;
 	top: 91%;
@@ -136,7 +135,68 @@ img {
   border-bottom: none;
 }
 
-/*-----------------------------------------------------------*/
+/* iPhone5s, SE ---------------------------------------------*/
+@media (max-width:320px){
+	#header {
+	  background: #eee;
+	  text-align: center;
+		font-size: 10px;
+	  font-weight: bold;
+	}
+
+	/*どんなスポーツしたい？*/
+	.lblWhat {
+		color: #ff8181;/*文字色*/
+	  text-align: center;/*中身を中央寄せ*/
+	  font-size: 12px;/*文字のサイズ*/
+	}
+
+	.button-row .label {
+		width: 100px;
+		font-size: 10px;
+		text-align: center;
+	}
+
+	/*検索ボタン*/
+	.btnSearch {
+		position: absolute;
+		top: 93%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit- transform: translateX(-50%);
+		color: #FFF;/*文字・アイコン色*/
+	  border-radius: 25px;/*角丸に*/
+	  display: inline-block;
+	  height: 28px;/*高さ*/
+	  width: 50%;/*幅*/
+		max-width: 360px;
+	  text-align: center;/*中身を中央寄せ*/
+	  font-size: 14px;/*文字のサイズ*/
+	  line-height: 28px;/*高さと合わせる*/
+	  vertical-align: middle;/*垂直中央寄せ*/
+	  background: #ff6600;
+	  overflow: hidden;/*はみ出た部分を隠す*/
+	  text-decoration:none;/*下線は消す*/
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
+	  border-bottom: solid 4px #994400;
+	}
+
+	.btnSearch:active {
+		position: absolute;
+		top: 93%;
+		left: 50%;
+		height: 28px;/*高さ*/
+	  width: 50%;/*幅*/
+		transform: translateX(-50%);
+		-webkit- transform: translateX(-50%);
+	  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+	  border-bottom: none;
+	}
+
+}
+
+
+/* PC and others---------------------------------------------*/
 @media (min-width:640px){
 	#header {
 	  background: #eee;
