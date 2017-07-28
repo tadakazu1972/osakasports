@@ -61,8 +61,8 @@ function drawFacility(){
   var header = document.getElementById("header");
   header.innerHTML = name;
   //施設情報書き込み
-  document.getElementById("address").innerHTML = address;
-  document.getElementById("tel").innerHTML = tel;
+  document.getElementById("address").innerHTML = "住所：" + address;
+  document.getElementById("tel").innerHTML = "電話：" + tel;
   //イベント一覧のcsvファイル読み込み
   var xhr = new XMLHttpRequest();
   xhr.onload = function(){

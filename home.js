@@ -8,7 +8,7 @@ function drawHome(){
   //ヘッダー
   var header = document.getElementById("header"); //index.htmlからid=headerを確保
   header.innerHTML = "大阪市オータム・チャレンジ・スポーツ";
-  //ボタン描画
+  /*//ボタン描画
   var button = new Array();
   var img = new Array();
   var imageFile = ["1_itai_org","3_joutai_org","2_yasetai_org","4_kirei_org","6_shin_org","5_minna_org","7_hitori_org","9_wakai_org","8_oyako_org","10_kodomo_org","12_taiken_org","11_naraitai_org"];
@@ -30,7 +30,7 @@ function drawHome(){
     img[i].height = 65 * ratio;
     document.body.appendChild(button[i]);
     button[i].appendChild(img[i]);
-  }
+  }*/
   //ラベル描画
   var label = new Array();
   var labelText = ["最近身体が痛いな…","身体の状態を知りたい!","やせたい!","きれいになりたい!","新感覚!?","みんなでワイワイ!","一人で参加OK!","若者には負けないぞ!","親子でエンジョイ!","子どもに運動を!","まずは体験!","習いたい!"];
@@ -50,4 +50,52 @@ function clickButton(num){
   var num = encodeURIComponent(num);
   var param = "num="+num;
   location.href="./map.html?"+param;
+}
+
+function clickButton1(){
+  location.href = "./map.html?num=0";
+}
+
+function clickButton2(){
+  location.href = "./map.html?num=1";
+}
+
+function clickButton3(){
+  location.href = "./map.html?num=2";
+}
+
+function clickButton4(){
+  location.href = "./map.html?num=3";
+}
+
+function clickButton5(){
+  location.href = "./map.html?num=4";
+}
+
+function clickButton6(){
+  location.href = "./map.html?num=5";
+}
+
+function clickButton7(){
+  location.href = "./map.html?num=6";
+}
+
+function clickButton8(){
+  location.href = "./map.html?num=7";
+}
+
+function clickButton9(){
+  location.href = "./map.html?num=8";
+}
+
+function clickButton10(){
+  location.href = "./map.html?num=9";
+}
+
+function clickButton11(){
+  location.href = "./map.html?num=10";
+}
+
+function clickButton12(){
+  location.href = "./map.html?num=11";
 }
