@@ -34,7 +34,7 @@ img {
 }
 
 .eventData tr td {
-	max-width:240px;
+	max-width:300px;
 	word-wrap: break-word;
 }
 
@@ -92,4 +92,20 @@ img {
 	height: 36px;/*高さ*/
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
+}
+
+/* iPhone5s, SE ---------------------------------------------*/
+@media (max-width:320px){
+	.eventData tr td {
+		max-width: 240px;
+		word-wrap: break-word;
+	}
+}
+
+/* PC and others---------------------------------------------*/
+@media (min-width:640px){
+	.eventData tr td {
+		max-width: 560px;
+		word-wrap: break-word;
+	}
 }
