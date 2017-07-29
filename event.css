@@ -33,6 +33,10 @@ img {
 	font-size: 14px;
 }
 
+.eventData tr td {
+	word-wrap: break-word;
+}
+
 #calendarParent {
 	margin-top: 16px;
 	margin-left: auto;
