@@ -68,6 +68,31 @@ function drawFacility(){
   xhr.onload = function(){
     //var container = document.getElementById("list"); //リスト描画タグ確保
     var tempArray = xhr.responseText.split("\n");
+    //とりあえず全データを日付昇順でバブルソート
+    csvArray2 = new Array();
+    csvArray3 = new Array();
+    tempArray2 = new Array();
+    var u,v;
+    for(u=0;u<tempArray.length-1;u++){
+      for(v=tempArray.length-1; v>u; v--){
+        //現時点のデータ取得
+        csvArray2 = tempArray[v].split(",");
+        var tempDate1Str = csvArray2[7].slice(0,-3); //開催日の文字列『１０/９（祝）」から「（祝）」を捨てる
+        var tempDate1Pair = tempDate1Str.split("/"); //"/"の文字で分割して配列にする
+        var tempDate1 = new Date(2017, tempDate1Pair[0]-1, tempDate1Pair[1]);
+        //１つ前のデータ取得
+        csvArray3 = tempArray[v-1].split(",");
+        var tempDate2Str = csvArray3[7].slice(0,-3); //開催日の文字列『１０/９（祝）」から「（祝）」を捨てる
+        var tempDate2Pair = tempDate2Str.split("/"); //"/"の文字で分割して配列にする
+        var tempDate2 = new Date(2017, tempDate2Pair[0]-1, tempDate2Pair[1]);
+        if ( tempDate2 > tempDate1 ) {
+          tempArray2 = tempArray[v];
+          tempArray[v] = tempArray[v-1];
+          tempArray[v-1] = tempArray2;
+        }
+      }
+    }
+    //ソート完了後
     var csvArray = new Array();
     for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
       csvArray[i] = tempArray[i].split(",");
