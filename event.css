@@ -37,6 +37,10 @@ img {
 	word-wrap: break-word;
 }
 
+#time {
+	word-wrap: break-word;
+}
+
 #calendarParent {
 	margin-top: 16px;
 	margin-left: auto;
