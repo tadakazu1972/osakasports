@@ -109,3 +109,7 @@ function postFacebook(){
   var url = "https://osakasports.azurewebsites.net/event.html?id=" + id;
   location.href= "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 }
+
+function clickTop(){
+  location.href = "./index.html";
+}
