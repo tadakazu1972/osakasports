@@ -79,12 +79,14 @@ img {
   border-bottom: solid 6px #224466;
 }
 
+/*　aタグのリンクと競合してうまく効かない？まだ未確定だが
 .btnSearch:active {
 	margin: 0 auto;
-	height: 36px;/*高さ*/
+	height: 36px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
 }
+*/
 
 /* iPhone5s, SE ---------------------------------------------*/
 @media (max-width:320px){
