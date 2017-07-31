@@ -101,8 +101,8 @@ img {
 
 /*検索ボタン*/
 .btnSearch {
+	margin-top: 16px;
 	position: absolute;
-	top: 90%;
 	left: 50%;
 	transform: translateX(-50%);
 	-webkit- transform: translateX(-50%);
@@ -125,7 +125,6 @@ img {
 
 .btnSearch:active {
 	position: absolute;
-	top: 91%;
 	left: 50%;
 	height: 36px;/*高さ*/
   width: 50%;/*幅*/
