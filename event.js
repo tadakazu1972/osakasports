@@ -73,9 +73,14 @@ function drawEvent(){
         var date = new Date(2017, tempDatePair[0]-1, tempDatePair[1]); //これで開催日作成
         var zero = function(n) { return ('0' + n).slice(-2); };
         var startDate = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var startTime = "090000";
         var endDate   = date.getFullYear() + zero(date.getMonth()+1) + zero(date.getDate());
-        var endTime   = "180000";
+        //時間のパース。ただし、複数時間が同一カラムに記載されている場合は想定どおりうごかない。結果、終日で登録されることになる
+        var tempTimeStr = data[8].replace( /:/g, ""); //正規表現。9:00~13:00の:をg(グローバルマッチ)ですべて滅ぼす準備
+        var tempTimePair = tempTimeStr.split("~"); // 900と1300に分割
+        var zero4 = function(n) { return ('0' + n).slice(-4); }; //900を0900に前0埋め 1300のときは1300のまま（後ろ４文字）
+        var startTime = zero4(tempTimePair[0]) + "00";
+        var endTime   = zero4(tempTimePair[1]) + "00";
+        //さあ、すべてを終わりにしよう
         var dates = startDate + 'T' + startTime + '/' + endDate + 'T' + endTime;
         //場所->住所
         var location = eventData[i].address;
