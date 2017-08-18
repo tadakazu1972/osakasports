@@ -106,7 +106,7 @@ function postTwitter(){
 
 function postLine(){
   //LINE
-  location.href = "http://line.me/R/msg/text/?【イベント名】" +eventData[id].name + "%0A【場所】" + eventData[id].facility + "¥n【内容】" + eventData[id].top + "¥n【参加費】" + eventData[id].fee;
+  location.href = "http://line.me/R/msg/text/?【イベント名】" +eventData[id].name + "%0A【場所】" + eventData[id].facility + "%0A【内容】" + eventData[id].top + "%0A【参加費】" + eventData[id].fee + "%0A【参加対象】" + eventData[id].target + "%0A【申込方法】" + eventData[id].submit + "%0A【問い合わせ先】" + eventData[id].question + "%0A★★オータム・チャレンジ・スポーツ2017ーこの秋から始めようスポーツライフ！ー★★%0A9月から11月の3ヶ月間、大阪市内各所で様々なスポーツを楽しめる参加型イベントを開催します！%0Aアプリのダウンロードはこちらから。%0Ahttps://civictechosaka.wixsite.com/undobusoku";
 }
 
 function postFacebook(){
