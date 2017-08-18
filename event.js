@@ -111,7 +111,7 @@ function postLine(){
 
 function postFacebook(){
   //Facebook
-  var url = "https://civictechosaka.wixsite.com/undobusoku";
+  var url = "https://osakasports.azurewebsites.net/event.html?id=" + id;
   location.href= "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 }
 
