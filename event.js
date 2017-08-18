@@ -101,17 +101,17 @@ function drawEvent(){
 
 function postTwitter(){
   //Twitter
-  location.href = "https://twitter.com/share?url=https://osakasports.azurewebsites.net/event.html?id="+id+"&text=【大阪市オータムチャレンジスポーツ2017】" + eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time;
+  location.href = "https://twitter.com/share?url=https://civictechosaka.wixsite.com/undobusoku&text=【大阪市オータムチャレンジスポーツ2017】" + eventData[id].name + "/" + eventData[id].date + "/" + eventData[id].time + "/" + eventData[id].facility + "/" + eventData[id].top;
 }
 
 function postLine(){
   //LINE
-  location.href = "http://line.me/R/msg/text/?【イベント名】" +eventData[id].name + "%0A【場所】" + eventData[id].facility + "%0A【内容】" + eventData[id].top + "%0A【参加費】" + eventData[id].fee + "%0A【参加対象】" + eventData[id].target + "%0A【申込方法】" + eventData[id].submit + "%0A【問い合わせ先】" + eventData[id].question + "%0A★★オータム・チャレンジ・スポーツ2017ーこの秋から始めようスポーツライフ！ー★★%0A9月から11月の3ヶ月間、大阪市内各所で様々なスポーツを楽しめる参加型イベントを開催します！%0Aアプリのダウンロードはこちらから。%0Ahttps://civictechosaka.wixsite.com/undobusoku";
+  location.href = "http://line.me/R/msg/text/?【イベント名】" + eventData[id].name + "%0A【開催日】" + eventData[id].date + "%0A【時間】" + eventData[id].time + "%0A【場所】" + eventData[id].facility + "(最寄り駅:"+ eventData[i].station + ")%0A【内容】" + eventData[id].top + "%0A【参加費】" + eventData[id].fee + "%0A【参加対象】" + eventData[id].target + "%0A【申込方法】" + eventData[id].submit + "%0A【問い合わせ先】" + eventData[id].question + "%0A★★オータム・チャレンジ・スポーツ2017ーこの秋から始めようスポーツライフ！ー★★%0A9月から11月の3ヶ月間、大阪市内各所で様々なスポーツを楽しめる参加型イベントを開催します！%0Aアプリのダウンロードはこちらから。%0Ahttps://civictechosaka.wixsite.com/undobusoku";
 }
 
 function postFacebook(){
   //Facebook
-  var url = "https://osakasports.azurewebsites.net/event.html?id=" + id;
+  var url = "https://civictechosaka.wixsite.com/undobusoku";
   location.href= "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 }
 
