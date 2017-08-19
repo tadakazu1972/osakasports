@@ -212,7 +212,7 @@ function drawResult(){
       };
     };
   };
-  xhr.open("get", "data2017.csv", true);
+  xhr.open("get", "data2017c.csv", true);
   xhr.send(null);
 }
 
