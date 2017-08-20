@@ -51,6 +51,9 @@ function drawResult(){
   xhr.onload = function(){
     //var container = document.getElementById("list"); //リスト描画タグ確保
     var tempArray = xhr.responseText.split("\n");
+    /*
+    以前は以下の日付昇順ソートを使っていたが、data2017c.csvによって元データを日付昇順したデータを用いる
+    こととなったため、必要なくなり、実行スピードのほうを選択するためコメントアウトすることとする。
     //とりあえず全データを日付昇順でバブルソート
     csvArray2 = new Array();
     csvArray3 = new Array();
@@ -74,7 +77,7 @@ function drawResult(){
           tempArray[v-1] = tempArray2;
         }
       }
-    }
+    }*/
     //ソート完了後
     var csvArray = new Array();
     for(var i=1;i<tempArray.length;i++){ //i=1はヘッダーを読み込ませないため
